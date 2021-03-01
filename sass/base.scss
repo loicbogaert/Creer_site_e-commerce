@@ -1,0 +1,145 @@
+/*Carousel*/
+
+@media (min-width : 992px) {
+    .carousel img {
+        height: 600px;
+        object-fit: cover;
+    }
+}
+
+.carousel img {
+    width: 100%;
+}
+
+/*Carousel texts*/
+
+.item-title {
+    position: absolute;
+    font-size: 80px;
+    z-index: 20;
+    color: white;
+    text-shadow: 2px 2px 0px rgb(75, 86, 88);
+        &__txt {
+            position: absolute;
+            color: white;
+            font-size: 21px;
+            text-shadow: 1.5px 1.5px 0px rgb(75, 86, 88);
+            text-align: justify;
+        }
+            &__btn {
+                position: absolute;
+                width: 200px;
+                height: 60px;
+                font-weight: bold;
+            }
+}
+
+#item-title1 {
+    top:20%;
+    right: 10%;
+        &__txt {
+            width: 200%;
+            margin-left: -50%;
+        }
+}
+
+#item-title2 {
+    top: 5%;
+    left: 8%;
+        &__txt {
+            width: 200%;
+            margin-left: -50%;
+        }
+}
+
+#item-title3 {
+    top: 20%;
+    right: 10%;
+        &__txt {
+            width: 200%;
+            margin-left: -50%;
+        }
+}
+
+#carousel-button3 {
+    top: 45%;
+    left: 5%;
+}
+
+#carousel-button2 {
+    top: 45%;
+    right: 5%;
+}
+
+#carousel-button1 {
+    top: 45%;
+    left: 5%;
+}
+
+/*navbars*/
+
+/*Partie Main*/
+
+.item-list {
+    &__square {
+        width:200px ;
+        height:200px ;
+    }
+        &__img {
+
+        }
+         &__name {
+            font-size: 15px;
+         }
+            &__price {
+                font-size : 15px;
+            }
+}
+
+
+/*format scale*/
+
+@media (max-width : 650px) {
+
+    /*Carousel*/
+
+    .item-title {
+        font-size: 30px;
+            &__txt {
+                font-size: 10px;
+        }
+    }
+
+    #item-title2 {
+        width: 14%;
+    }
+}
+
+
+@media (min-width : 651px) {
+    .item-title {
+        font-size: 40px;
+            &__txt {
+                font-size: 15px;
+        }
+    }
+
+    #item-title2 {
+        width: 14%;
+    }
+}
+
+@media (min-width : 992px) {
+    .item-title {
+        font-size: 80px;
+            &__txt {
+                font-size: 23px;
+        }
+    }
+
+    #item-title2 {
+        width: 14%;
+    }
+}
+
+
