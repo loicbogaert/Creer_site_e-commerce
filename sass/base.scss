@@ -1,14 +1,106 @@
-/*Carousel*/
+@import "util.scss";
 
-@media (min-width : 992px) {
-    .carousel img {
-        height: 600px;
-        object-fit: cover;
+/*header*/
+
+/*navbars*/
+
+.navbar1 {
+    &__links {
+        display: flex;
+        justify-content: center;
+        text-shadow: 1.5px 1.5px 0px rgb(39, 165, 187);
     }
+        &__txt {
+            margin-right: 12px;
+            color: black !important;
+            text-decoration: none;
+        }
+            &__txt a {
+                color: black;
+                display: block;
+                height: 30px;
+                    &:hover {
+                        color: $blue;
+                        text-shadow: 1.5px 1.5px 0px rgb(0, 0, 0);
+                        transform: translate(8px, -5px) scale(1.2);
+                        transition-duration: 0.5s;
+                    }
+            }
 }
 
-.carousel img {
+.navLinks {
+    display: flex;
+}
+
+.navbar2 {
+    background-color: black;
+    color: white;
+    height: 60px;
+    margin: 0;
+}
+
+#navbarn2 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbarList a{
+    text-shadow: 1px 1px 0px rgb(39, 165, 187);
+    color: white;
+    height : 60px;
+    text-align: center;
     width: 100%;
+    line-height: 3.5em;
+    font-size: 18px;
+}
+
+.navbarList {
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.navbarList a:hover {
+    text-decoration: none;
+    color: $blue;
+    text-shadow: 1px 1px 0px rgb(255, 255, 255);
+    transform: translate(8px, -5px) scale(1.2);
+    transition-duration: 0.5s;
+    display: block;
+}
+
+/*Searchbar*/
+
+.searchbar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    &__text {
+        width: 500px;
+        height: 40px;
+        padding: 10px;
+        margin: 0;
+        margin-bottom: 10px;
+        border: 5px solid  black;
+        color: $blue;
+    }
+        &__button {
+            height: 40px;
+            margin: 0;
+            margin-left: -15px;
+            color: $blue;
+            background-color: black;
+            padding-right: 10px;
+            border-color: black;
+            border-style: solid;
+        }
 }
 
 /*Carousel texts*/
@@ -28,9 +120,8 @@
         }
             &__btn {
                 position: absolute;
-                width: 200px;
-                height: 60px;
                 font-weight: bold;
+                border-radius: 10px !important;
             }
 }
 
@@ -76,70 +167,38 @@
     left: 5%;
 }
 
-/*navbars*/
+
+
 
 /*Partie Main*/
 
 .item-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     &__square {
         width:200px ;
-        height:200px ;
+        margin-top: 20px;
     }
         &__img {
-
+            object-fit: cover;
         }
          &__name {
             font-size: 15px;
          }
-            &__price {
-                font-size : 15px;
-            }
-}
-
-
-/*format scale*/
-
-@media (max-width : 650px) {
-
-    /*Carousel*/
-
-    .item-title {
-        font-size: 30px;
-            &__txt {
-                font-size: 10px;
-        }
-    }
-
-    #item-title2 {
-        width: 14%;
-    }
-}
-
-
-@media (min-width : 651px) {
-    .item-title {
-        font-size: 40px;
-            &__txt {
-                font-size: 15px;
-        }
-    }
-
-    #item-title2 {
-        width: 14%;
-    }
-}
-
-@media (min-width : 992px) {
-    .item-title {
-        font-size: 80px;
-            &__txt {
-                font-size: 23px;
-        }
-    }
-
-    #item-title2 {
-        width: 14%;
-    }
+                &__checkout {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                }
+                    &__price {
+                        font-size : 15px;
+                    }
+                        &__button {
+                            font-size: 15px;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                        }
 }
 
 

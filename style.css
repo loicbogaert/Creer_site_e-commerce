@@ -1,12 +1,143 @@
-/*Carousel*/
-@media (min-width: 992px) {
-  .carousel img {
-    height: 600px;
-    object-fit: cover;
-  }
+/*variables*/
+/**/
+.bold {
+  font-weight: bolder;
 }
-.carousel img {
+
+/*background*/
+.background {
+  background-color: #545e6e;
+}
+
+/*titres*/
+.titre {
+  font-family: "Oi", cursive;
+  text-align: center;
+  text-shadow: 1.5px 1.5px 0px #27a5bb;
+}
+
+.sous-titre {
+  font-family: roboto;
+}
+
+.texte {
+  font-family: roboto;
+}
+
+/*boutons*/
+.btn-primary {
+  background-color: #27a5bb !important;
+  border-color: #27a5bb !important;
+  color: black !important;
+  font-weight: bolder !important;
+}
+
+/*links*/
+.link {
+  text-decoration: none !important;
+}
+
+/*no outline*/
+:focus {
+  outline: none;
+}
+
+/*header*/
+/*navbars*/
+.navbar1__links {
+  display: flex;
+  justify-content: center;
+  text-shadow: 1.5px 1.5px 0px #27a5bb;
+}
+.navbar1__txt {
+  margin-right: 12px;
+  color: black !important;
+  text-decoration: none;
+}
+.navbar1__txt a {
+  color: black;
+  display: block;
+  height: 30px;
+}
+.navbar1__txt a:hover {
+  color: #27a5bb;
+  text-shadow: 1.5px 1.5px 0px black;
+  transform: translate(8px, -5px) scale(1.2);
+  transition-duration: 0.5s;
+}
+
+.navLinks {
+  display: flex;
+}
+
+.navbar2 {
+  background-color: black;
+  color: white;
+  height: 60px;
+  margin: 0;
+}
+
+#navbarn2 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbarList a {
+  text-shadow: 1px 1px 0px #27a5bb;
+  color: white;
+  height: 60px;
+  text-align: center;
   width: 100%;
+  line-height: 3.5em;
+  font-size: 18px;
+}
+
+.navbarList {
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.navbarList a:hover {
+  text-decoration: none;
+  color: #27a5bb;
+  text-shadow: 1px 1px 0px white;
+  transform: translate(8px, -5px) scale(1.2);
+  transition-duration: 0.5s;
+  display: block;
+}
+
+/*Searchbar*/
+.searchbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.searchbar__text {
+  width: 500px;
+  height: 40px;
+  padding: 10px;
+  margin: 0;
+  margin-bottom: 10px;
+  border: 5px solid black;
+  color: #27a5bb;
+}
+.searchbar__button {
+  height: 40px;
+  margin: 0;
+  margin-left: -15px;
+  color: #27a5bb;
+  background-color: black;
+  padding-right: 10px;
+  border-color: black;
+  border-style: solid;
 }
 
 /*Carousel texts*/
@@ -26,9 +157,8 @@
 }
 .item-title__btn {
   position: absolute;
-  width: 200px;
-  height: 60px;
   font-weight: bold;
+  border-radius: 10px !important;
 }
 
 #item-title1 {
@@ -73,17 +203,78 @@
   left: 5%;
 }
 
-/*navbars*/
 /*Partie Main*/
+.item-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 .item-list__square {
   width: 200px;
-  height: 200px;
+  margin-top: 20px;
+}
+.item-list__img {
+  object-fit: cover;
 }
 .item-list__name {
   font-size: 15px;
 }
+.item-list__checkout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
 .item-list__price {
   font-size: 15px;
+}
+.item-list__button {
+  font-size: 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/*variables*/
+/**/
+.bold {
+  font-weight: bolder;
+}
+
+/*background*/
+.background {
+  background-color: #545e6e;
+}
+
+/*titres*/
+.titre {
+  font-family: "Oi", cursive;
+  text-align: center;
+  text-shadow: 1.5px 1.5px 0px #27a5bb;
+}
+
+.sous-titre {
+  font-family: roboto;
+}
+
+.texte {
+  font-family: roboto;
+}
+
+/*boutons*/
+.btn-primary {
+  background-color: #27a5bb !important;
+  border-color: #27a5bb !important;
+  color: black !important;
+  font-weight: bolder !important;
+}
+
+/*links*/
+.link {
+  text-decoration: none !important;
+}
+
+/*no outline*/
+:focus {
+  outline: none;
 }
 
 /*format scale*/
@@ -107,6 +298,10 @@
   .item-title__txt {
     font-size: 15px;
   }
+  .item-title__btn {
+    width: 200px;
+    height: 60px;
+  }
 
   #item-title2 {
     width: 14%;
@@ -123,6 +318,16 @@
   #item-title2 {
     width: 14%;
   }
+}
+/*Carousel*/
+@media (min-width: 992px) {
+  .carousel img {
+    height: 600px;
+    object-fit: cover;
+  }
+}
+.carousel img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

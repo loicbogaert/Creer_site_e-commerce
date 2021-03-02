@@ -1,0 +1,63 @@
+/*format scale*/
+
+@media (max-width : 650px) {
+
+    /*Carousel*/
+
+    .item-title {
+        font-size: 30px;
+            &__txt {
+                font-size: 10px;
+        }
+    }
+
+    #item-title2 {
+        width: 14%;
+    }
+}
+
+
+@media (min-width : 651px) {
+    .item-title {
+        font-size: 40px;
+            &__txt {
+                font-size: 15px;
+        }
+            &__btn {
+                width: 200px;
+                height: 60px;
+            }
+    }
+
+
+
+    #item-title2 {
+        width: 14%;
+    }
+}
+
+@media (min-width : 992px) {
+    .item-title {
+        font-size: 80px;
+            &__txt {
+                font-size: 23px;
+        }
+    }
+
+    #item-title2 {
+        width: 14%;
+    }
+}
+
+/*Carousel*/
+
+@media (min-width : 992px) {
+    .carousel img {
+        height: 600px;
+        object-fit: cover;
+    }
+}
+
+.carousel img {
+    width: 100%;
+}

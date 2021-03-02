@@ -1,0 +1,51 @@
+/*variables*/
+
+$blue : rgb(39, 165, 187);
+/**/
+
+.bold {
+    font-weight: bolder;
+}
+
+/*background*/
+
+.background {
+    background-color: #545e6e;
+}
+
+/*titres*/
+
+.titre {
+    font-family: 'Oi', cursive;
+    text-align: center;
+    text-shadow: 1.5px 1.5px 0px rgb(39, 165, 187);
+}
+
+.sous-titre {
+    font-family: roboto ;
+}
+
+.texte {
+    font-family: roboto ;
+}
+
+/*boutons*/
+
+.btn-primary {
+    background-color: $blue !important;
+    border-color: $blue !important;
+    color: black !important;
+    font-weight: bolder !important;
+}
+
+/*links*/
+
+.link {
+    text-decoration: none !important;
+}
+
+/*no outline*/
+
+:focus {
+    outline: none;
+}
