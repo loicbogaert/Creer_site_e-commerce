@@ -14,6 +14,7 @@
             margin-right: 12px;
             color: black !important;
             text-decoration: none;
+            font-size: 19px;
         }
             &__txt a {
                 color: black;
@@ -51,8 +52,8 @@
     height : 60px;
     text-align: center;
     width: 100%;
-    line-height: 3.5em;
-    font-size: 18px;
+    line-height: 3.2em;
+    font-size: 20px;
 }
 
 .navbarList {
@@ -127,10 +128,10 @@
 
 #item-title1 {
     top:20%;
-    right: 10%;
+    right: 18%;
         &__txt {
-            width: 200%;
-            margin-left: -50%;
+            width: 300%;
+            margin-left: -85%;
         }
 }
 
@@ -138,17 +139,17 @@
     top: 5%;
     left: 8%;
         &__txt {
-            width: 200%;
+            width: 250%;
             margin-left: -50%;
         }
 }
 
 #item-title3 {
     top: 20%;
-    right: 10%;
+    right: 15%;
         &__txt {
-            width: 200%;
-            margin-left: -50%;
+            width: 280%;
+            margin-left: -90%;
         }
 }
 
@@ -176,29 +177,101 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     &__square {
-        width:200px ;
-        margin-top: 20px;
+        -webkit-box-shadow: 4px 1px 23px 2px rgba(0,0,0,0.75);
+-moz-box-shadow: 4px 1px 23px 2px rgba(0,0,0,0.75);
+box-shadow: 4px 1px 23px 2px rgba(0,0,0,0.75);
+        margin: 30px;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        -moz-box-sizing: border-box !important;
+        -webkit-box-sizing: border-box !important;
+        display: flex;
+        flex-direction: column;
+            &:hover {
+                border: $blue solid 2px;
+            }
     }
-        &__img {
+        &__image {
             object-fit: cover;
+            height:70% !important;
+            width: 100% !important;
         }
          &__name {
-            font-size: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
          }
                 &__checkout {
                     display: flex;
                     flex-direction: row;
                     width: 100%;
+                    margin-bottom: 0%;
+                    height: 15%;
+                    align-items: center;
                 }
                     &__price {
                         font-size : 15px;
+                        font-weight: bold;
+                        text-align: center;
+                        margin-bottom: 0;
                     }
                         &__button {
                             font-size: 15px;
                             white-space: nowrap;
                             text-overflow: ellipsis;
+                            height: 80%;
+                            margin-left: -10px;
                         }
 }
 
 
+/*Partie footer*/
+
+.footer {
+    background-color: black;
+    width: 100%;
+    &__upper {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        padding-top: 15px;
+    }
+        &__logo {
+            color:#545e6e;
+            font-family: 'Oi', cursive;
+            padding-bottom: 50px;
+        }
+        &__col {
+            width: 100%;
+            color: white;
+            text-align: center;
+            font-size: 17px;
+            font-weight: bold;
+        }
+            &__span {
+                display: block;
+                background-color: white ;
+                width: 90%;
+                height: 1px;
+                margin-left: 5%;
+                margin-top: 50px;
+                margin-bottom: 20px;
+            }
+                &__logo-list {
+                    font-size: 40px;
+                    color:#545e6e;
+                    text-align: center;
+                }
+                    &__media {
+                        margin-right: 20px;
+                        margin-top: 80px;
+                        margin-bottom: 100px;
+                            &:hover {
+                                color: white;
+                                transform: translateY(-10px);
+                                transition-duration: 1.5s;
+                            }
+                    }
+}
