@@ -173,25 +173,53 @@
 
 /*Partie Main*/
 
+.main {
+    &__image {
+        width: 100px;
+        height: 100px;
+    }
+        &__title {
+
+        }
+            &__price {
+
+            }
+                &__description {
+
+                }
+                    &__code {
+
+                    }
+                        &__square {
+                            -webkit-box-shadow: 4px 1px 23px 2px rgba(0,0,0,0.75);
+                            -moz-box-shadow: 4px 1px 23px 2px rgba(0,0,0,0.75);
+                            box-shadow: 4px 1px 23px 2px rgba(0,0,0,0.75);
+                                    margin: 30px;
+                                    padding: 0 !important;
+                                    box-sizing: border-box !important;
+                                    -moz-box-sizing: border-box !important;
+                                    -webkit-box-sizing: border-box !important;
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 50%;
+                                    &:hover {
+                                        border: solid 2px $blue;
+                                    }
+                        }
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+}
+
 .item-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    &__square {
-        -webkit-box-shadow: 4px 1px 23px 2px rgba(0,0,0,0.75);
--moz-box-shadow: 4px 1px 23px 2px rgba(0,0,0,0.75);
-box-shadow: 4px 1px 23px 2px rgba(0,0,0,0.75);
-        margin: 30px;
-        padding: 0 !important;
-        box-sizing: border-box !important;
-        -moz-box-sizing: border-box !important;
-        -webkit-box-sizing: border-box !important;
-        display: flex;
-        flex-direction: column;
             &:hover {
                 border: $blue solid 2px;
-            }
     }
         &__image {
             object-fit: cover;
