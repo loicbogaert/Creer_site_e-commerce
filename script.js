@@ -1,6 +1,6 @@
 var request = new XMLHttpRequest();
 
-request.onreadystatechange = function() {
+    request.onreadystatechange = function() {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
         var response = JSON.parse(this.responseText)
 
@@ -8,51 +8,71 @@ request.onreadystatechange = function() {
         /*Array avec les données de l'API*/
         let product = new Array();
         product = response;
-        console.log(product);
+
+        /*Création d'une promesse*/
+
+    const promise = new Promise ((resolve, reject) => {
+        if(product.length >= 1) {
+            resolve()
+        }else {
+            reject()
+        }
+    });
 
 
-        
-        /*Boucle pour créer tout les éléments des différents "produits"*/
-        
-        document.getElementById('search').onclick = function Products() {
-                for (let i = 0; i < product.length; i++) {
+    
+    /*Uitilisation de la promesse*/
 
-                var divSquare = document.createElement("div")
-                divSquare.className = 'main__square';
-                divSquare.id = 'mainSquare' + [i];
+    promise.then(() => {
 
-                var divImg = document.createElement("div");
-                divImg.className = 'main__img';
+        /*Boucle pour créer tout les éléments des différents "produits" + ajout de classes*/
 
-                var div = document.createElement("h2");
-                div.className = 'main__title';
+       setTimeout (function Products() {
+        for (let i = 0; i < product.length; i++) {
 
-                var div2 = document.createElement("p");
-                div2.className = 'main__price';
+        var divSquare = document.createElement("div")
+        divSquare.className = 'main__square';
+        divSquare.id = 'mainSquare' + [i];
 
-                var div3 = document.createElement("p");
-                div3.className = 'main__description';
+        /*bootstrap classes*/
+        divSquare.classList.add("col-9");
+        divSquare.classList.add("col-md-5");
+        divSquare.classList.add("col-md-5");
+        divSquare.classList.add("col-lg-3");
 
-                var div4 = document.createElement("p");
-                div4.className = 'main__code';
-        
 
-        /*Création des éléments de texte*/
+        /**création des éléments + noms de classe*/
+        var divImg = document.createElement("div");
+        divImg.className = 'main__img';
 
-                var id = document.createTextNode (product[i]._id);
-                var name = document.createTextNode(product[i].name);
-                var price = document.createTextNode(product[i].price/100 + " $");
-                var description = document.createTextNode(product[i].description);
+        var div = document.createElement("h2");
+        div.className = 'main__title';
 
-        /*Céation des images*/
+        var div2 = document.createElement("p");
+        div2.className = 'main__price';
 
-                var image = document.createElement("img");
-                    image.src = product[i].imageUrl;
+        var div3 = document.createElement("p");
+        div3.className = 'main__description';
 
-        /*Ajout de tout les éléments "product" aux sous-div du MAIN*/ 
+        var div4 = document.createElement("p");
+        div4.className = 'main__code';
+
+            /*Création des éléments de texte*/
+
+        var id = document.createTextNode ("product reference : " + product[i]._id);
+        var name = document.createTextNode(product[i].name);
+        var price = document.createTextNode(product[i].price/100 + " $");
+        var description = document.createTextNode(product[i].description);
+                
+
+            /*Céation des images*/
+
+        var image = document.createElement("img");
+        image.src = product[i].imageUrl;
+
+              /*Ajout de tout les éléments "product" aux sous-div du MAIN*/ 
 
                 document.getElementById('main').appendChild(divSquare);
-
 
                 document.getElementById('mainSquare' + [i]).appendChild(divImg);
                 divImg.appendChild(image);
@@ -67,14 +87,29 @@ request.onreadystatechange = function() {
                 div3.appendChild(description);
 
                 document.getElementById('mainSquare' + [i]).appendChild(div4);
-                div4.appendChild(id);
+                div4.appendChild(id);               
+          }
+        }, 0);
+           
+    }).catch(() => {
+        console.log('error')
+});
 
-        /*Ajout de classes aux éléments créés*/
 
-    }
-}
+
+        
+    
+                
+        
+
+
+    
+
+
+
     }
 };
+
 
 
 

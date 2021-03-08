@@ -225,7 +225,7 @@
 .item-title__btn {
   position: absolute;
   font-weight: bold;
-  border-radius: 10px !important;
+  border-radius: 10px;
 }
 
 #item-title1 {
@@ -271,71 +271,49 @@
 }
 
 /*Partie Main*/
-.main__image {
-  width: 100px;
-  height: 100px;
+.main {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.main__title {
+  text-align: center;
+}
+.main__price {
+  font-weight: bold;
+  font-size: 25px;
+  text-decoration: underline;
+  text-align: center;
+}
+.main__description {
+  text-align: justify;
+  padding: 10px;
+  font-size: 18px;
+}
+.main__code {
+  font-style: italic;
+  text-align: center;
 }
 .main__square {
   -webkit-box-shadow: 4px 1px 23px 2px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 4px 1px 23px 2px rgba(0, 0, 0, 0.75);
   box-shadow: 4px 1px 23px 2px rgba(0, 0, 0, 0.75);
-  margin: 30px;
-  padding: 0 !important;
-  box-sizing: border-box !important;
-  -moz-box-sizing: border-box !important;
-  -webkit-box-sizing: border-box !important;
-  display: flex;
-  flex-direction: column;
-  width: 50%;
+  margin: 20px;
+  padding: 0;
 }
 .main__square:hover {
-  border: solid 2px #27a5bb;
+  transition-duration: 1s;
+  -webkit-box-shadow: 4px 1px 23px 2px #27a5bb;
+  -moz-box-shadow: 4px 1px 23px 2px #27a5bb;
+  box-shadow: 4px 1px 23px 2px #27a5bb;
 }
 
 img {
-  object-fit: cover;
   width: 100%;
-}
-
-.item-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.item-list:hover {
-  border: #27a5bb solid 2px;
-}
-.item-list__image {
   object-fit: cover;
-  height: 70% !important;
-  width: 100% !important;
-}
-.item-list__name {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-}
-.item-list__checkout {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  margin-bottom: 0%;
-  height: 15%;
-  align-items: center;
-}
-.item-list__price {
-  font-size: 15px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 0;
-}
-.item-list__button {
-  font-size: 15px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  height: 80%;
-  margin-left: -10px;
 }
 
 /*Partie footer*/
