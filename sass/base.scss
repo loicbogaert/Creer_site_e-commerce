@@ -180,13 +180,12 @@
     justify-items: center;
     justify-content: center;
     flex-wrap: wrap;
-        &__title {
+        &__title{
             text-align: center;
         }
             &__price {
                 font-weight: bold;
                 font-size: 25px;
-                text-decoration: underline;
                 text-align: center;
             }
                 &__description {
@@ -209,10 +208,22 @@
                                         -webkit-box-shadow: 4px 1px 23px 2px $blue;
                                         -moz-box-shadow: 4px 1px 23px 2px $blue;
                                         box-shadow: 4px 1px 23px 2px $blue;
+                                            &__title {
+                                                text-decoration: underline;
+                                            }
                                     }
                         }         
 }
 
+.main__square:hover {
+    cursor: pointer;
+    .main__title {
+        text-decoration: underline;
+    }
+        .main__price {
+            text-decoration: underline;
+        }
+}
 
 img {
     width: 100%;

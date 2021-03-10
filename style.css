@@ -285,7 +285,6 @@
 .main__price {
   font-weight: bold;
   font-size: 25px;
-  text-decoration: underline;
   text-align: center;
 }
 .main__description {
@@ -309,6 +308,19 @@
   -webkit-box-shadow: 4px 1px 23px 2px #27a5bb;
   -moz-box-shadow: 4px 1px 23px 2px #27a5bb;
   box-shadow: 4px 1px 23px 2px #27a5bb;
+}
+.main__square:hover__title {
+  text-decoration: underline;
+}
+
+.main__square:hover {
+  cursor: pointer;
+}
+.main__square:hover .main__title {
+  text-decoration: underline;
+}
+.main__square:hover .main__price {
+  text-decoration: underline;
 }
 
 img {
