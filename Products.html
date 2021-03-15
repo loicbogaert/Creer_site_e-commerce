@@ -1,22 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Anton&family=Oi&display=swap" rel="stylesheet">
+    <title>Orinoco : online camera store</title>
 </head>
-<body>
+<body class="background">
+    <header>
+        <nav class="navbar navbar1 col-12">
+            <h1 class="col-12 col-sm-8 col-md-8 titre logo1 logo">Orinoco <i class="fas fa-camera-retro"></i></h1>
     
-    <div class="pageProduct" id="pageProduct">
+            <div class="col-6 col-md-2 navbar1__links">
+                <p id="account" class="navbar1__txt bold link"><a href="#" class="link">Account <i class="fas fa-user"></i></a></p>
+            </div>
+    
+            <div  class="col-6 col-md-2 navbar1__links">
+                <p id="cart" class="navbar1__txt bold"><a href="#" class="link">Your Cart <i class="fas fa-cart-plus"></i></a></p>
+            </div>
+        </nav>
 
-    </div>
+        <nav class="navbar2" id="navbar2">
+            <ul class="navbar col-12 bold" id="navbarn2">
+                <li class="navbarList col-3"><a href="#">Home</a></li>
+                <li class="navbarList col-3"><a href="#">New Products</a></li>
+                <li class="navbarList col-3"><a href="#">All Products</a></li>
+                <li class="navbarList col-3"><a href="#">For Sale</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main class="productMain">
+        <div class="pageProduct" id="pageProduct">
+
+        </div>
+
+        <div class="buttonWrap">
+            <button class="buttonWrap__button bold">Add to cart  <i class="fas fa-cart-plus"></i></button>
+            <span class="buttonWrap__animation"></span>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="footer">
+            <div class="footer__upper col-12">
+                <div class="col-12">
+                    <h2 class="footer__logo"> Orinoco <i class="fas fa-camera-retro"></i></h2>
+                </div>
+        
+                <div class="footer__col col-4">
+                    <p>Support</p>
+                    <p>Report a problem</p>
+                    <p>Payback policy</p>
+                </div>
+        
+                <div class="footer__col col-4">
+                    <p>Services</p>
+                    <p>Pre-sale FAQs</p>
+                </div>
+        
+                <div class="footer__col col-4">
+                    <p>About us</p>
+                    <p>Contact us</p>
+                    <p>Affiliates</p>
+                </div>
+            </div>
+                <span class="footer__span"></span>
+            <div class="footer__lower">
+                <div class="footer__logo-list">
+                    <i class="fab fa-twitter-square footer__media"></i>
+                    <i class="fab fa-facebook-square footer__media"></i>
+                    <i class="fab fa-google-plus-square footer__media"></i>
+                    <i class="fab fa-instagram-square footer__media"></i>
+                    <i class="fas fa-share-alt-square footer__media"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 <script src="https://kit.fontawesome.com/e06337b559.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-<script type="text/javascript" src="Product_Page.js"></script>
+<script type="text/javascript" src="Products.js"></script>
 
 </body>
 </html>

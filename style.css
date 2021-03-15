@@ -71,7 +71,6 @@
   text-shadow: 1px 1px 2px white;
 }
 
-/*animations*/
 /*button carousel*/
 @keyframes button {
   from {
@@ -449,7 +448,6 @@ img {
   text-shadow: 1px 1px 2px white;
 }
 
-/*animations*/
 /*button carousel*/
 @keyframes button {
   from {
@@ -537,6 +535,198 @@ img {
 }
 .carousel img {
   width: 100%;
+}
+
+/*variables*/
+/**/
+.bold {
+  font-weight: bolder;
+}
+
+/*background*/
+.background {
+  background-color: #545e6e;
+}
+
+/*titres*/
+.logo {
+  font-family: "Oi", cursive;
+  text-shadow: 1.5px 1.5px 0px #27a5bb;
+}
+
+.logo1 {
+  text-align: center;
+}
+
+/*txt carousel*/
+.item-title {
+  font-family: "Anton", sans-serif;
+}
+.item-title__txt {
+  font-family: "Akaya Telivigala", cursive;
+}
+
+.navbarList {
+  font-family: "Akaya Telivigala", cursive;
+}
+
+/*boutons*/
+.item-title__btn {
+  background: -moz-linear-gradient(14deg, #545e6e 0%, #545e6e 33%, #27a5bb 100%, #27a5bb 100%);
+  /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #545e6e), color-stop(33%, #545e6e), color-stop(100%, #27a5bb), color-stop(100%, #27a5bb));
+  /* safari4+,chrome */
+  background: -webkit-linear-gradient(14deg, #545e6e 0%, #545e6e 33%, #27a5bb 100%, #27a5bb 100%);
+  /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(14deg, #545e6e 0%, #545e6e 33%, #27a5bb 100%, #27a5bb 100%);
+  /* opera 11.10+ */
+  background: -ms-linear-gradient(14deg, #545e6e 0%, #545e6e 33%, #27a5bb 100%, #27a5bb 100%);
+  /* ie10+ */
+  background: linear-gradient(76deg, #545e6e 0%, #545e6e 33%, #27a5bb 100%, #27a5bb 100%);
+  /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#545e6e", endColorstr="#27a5bb",GradientType=1 );
+  /* ie6-9 */
+  border: none !important;
+  font-weight: bolder !important;
+}
+.item-title__btn:hover {
+  animation-name: button;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+/*links*/
+.link {
+  text-decoration: none !important;
+}
+
+/*no outline*/
+:focus {
+  outline: none;
+}
+
+/*icon*/
+.fa-search {
+  text-shadow: 1px 1px 2px white;
+}
+
+/*button carousel*/
+@keyframes button {
+  from {
+    background: -moz-linear-gradient(14deg, #545e6e 0%, #545e6e 33%, #27a5bb 100%, #27a5bb 100%);
+    /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #545e6e), color-stop(33%, #545e6e), color-stop(100%, #27a5bb), color-stop(100%, #27a5bb));
+    /* safari4+,chrome */
+    background: -webkit-linear-gradient(14deg, #545e6e 0%, #545e6e 33%, #27a5bb 100%, #27a5bb 100%);
+    /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(14deg, #545e6e 0%, #545e6e 33%, #27a5bb 100%, #27a5bb 100%);
+    /* opera 11.10+ */
+    background: -ms-linear-gradient(14deg, #545e6e 0%, #545e6e 33%, #27a5bb 100%, #27a5bb 100%);
+    /* ie10+ */
+    background: linear-gradient(76deg, #545e6e 0%, #545e6e 33%, #27a5bb 100%, #27a5bb 100%);
+    /* w3c */
+    color: white;
+  }
+  to {
+    background: -moz-linear-gradient(14deg, #27a5bb 0%, #545e6e 68%, #545e6e 100%, #545e6e 100%);
+    /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #27a5bb), color-stop(68%, #545e6e), color-stop(100%, #545e6e), color-stop(100%, #545e6e));
+    /* safari4+,chrome */
+    background: -webkit-linear-gradient(14deg, #27a5bb 0%, #545e6e 68%, #545e6e 100%, #545e6e 100%);
+    /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(14deg, #27a5bb 0%, #545e6e 68%, #545e6e 100%, #545e6e 100%);
+    /* opera 11.10+ */
+    background: -ms-linear-gradient(14deg, #27a5bb 0%, #545e6e 68%, #545e6e 100%, #545e6e 100%);
+    /* ie10+ */
+    background: linear-gradient(76deg, #27a5bb 0%, #545e6e 68%, #545e6e 100%, #545e6e 100%);
+    /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#27a5bb", endColorstr="#545e6e",GradientType=1 );
+    /* ie6-9 */
+    color: black;
+    transform: rotate3d(1, 0, 0, 360deg) scale(1.2);
+  }
+}
+.productPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
+.productPage__img {
+  width: 50%;
+}
+.productPage__title {
+  font-size: 38px;
+}
+.productPage__price {
+  font-size: 25px;
+}
+.productPage__description {
+  width: 50%;
+  font-size: 20px;
+  text-align: justify;
+}
+
+.productMain {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonWrap {
+  height: 50px;
+  width: 200px;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+.buttonWrap__button {
+  width: 200px;
+  height: 50px;
+  background-color: transparent;
+  border: #27a5bb solid 5px;
+  font-size: 20px;
+  align-self: center;
+  color: #27a5bb;
+  -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.buttonWrap__animation {
+  display: block;
+  position: relative;
+  width: 200px;
+  height: 50px;
+  background-color: white;
+  z-index: -1;
+  transform: translateX(200px) translateY(-50px);
+}
+.buttonWrap:hover .buttonWrap__animation {
+  animation-name: buttonTranslate;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.buttonWrap:hover .buttonWrap__button {
+  animation-name: buttonColor;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+/*animation du bouton ajouter au panier*/
+@keyframes buttonTranslate {
+  0% {
+    transform: translateX(200px) translateY(-50px);
+  }
+  100% {
+    transform: translateX(0px) translateY(-50px);
+  }
+}
+@keyframes buttonColor {
+  100% {
+    color: black;
+    border-color: black;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
