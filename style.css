@@ -671,6 +671,12 @@ img {
   font-size: 20px;
   text-align: justify;
 }
+.productPage__checkbox {
+  margin: 10px;
+}
+.productPage__lenseType {
+  font-weight: bold;
+}
 
 .productMain {
   display: flex;
