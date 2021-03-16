@@ -8,9 +8,11 @@
     width: 100%;
         &__img {
           width: 50%;
+          padding-bottom: 20px;
         }
             &__title {
                 font-size: 38px;
+                padding: 20px;
             }
                 &__price {
                     font-size: 25px;
@@ -57,7 +59,7 @@
         }
                 &:hover &__animation{
                     animation-name: buttonTranslate;
-                    animation-duration: 1s;
+                    animation-duration: 1.5s;
                     animation-fill-mode: forwards;
                 }
                     &:hover &__button {

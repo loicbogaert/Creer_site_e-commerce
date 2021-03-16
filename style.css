@@ -141,6 +141,7 @@
   color: white;
   height: 60px;
   margin: 0;
+  overflow: hidden;
 }
 
 #navbarn2 {
@@ -157,6 +158,7 @@
   width: 100%;
   line-height: 3.2em;
   font-size: 20px;
+  overflow: hidden;
 }
 
 .navbarList {
@@ -655,9 +657,11 @@ img {
 }
 .productPage__img {
   width: 50%;
+  padding-bottom: 20px;
 }
 .productPage__title {
   font-size: 38px;
+  padding: 20px;
 }
 .productPage__price {
   font-size: 25px;
@@ -704,7 +708,7 @@ img {
 }
 .buttonWrap:hover .buttonWrap__animation {
   animation-name: buttonTranslate;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-fill-mode: forwards;
 }
 .buttonWrap:hover .buttonWrap__button {

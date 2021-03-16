@@ -26,14 +26,19 @@ function $_GET(param) {
         }
         
 
-/**Si l'url contient le paramètre ITEM {..} Sinon {..} (accueil ou page produit) */
+/**Si l'url contient le paramètre ITEM {..} Sinon {..} (ici page produit) */
 
         if(window.location.href.indexOf("item") != -1){
             const product = getData()
         
             product.then(product=>{
                 console.log(product);
-                console.log("this worked !")
+                console.log("this worked !");
+
+                /**Prise en compte du numéro de l'objet dans l'url avec la méthode ($_GET) */
+
+                var item =  $_GET("item");
+                console.log(item);
 
                 /*Div principale de la page produit*/
                 var page2 = document.getElementById("pageProduct");
@@ -43,32 +48,38 @@ function $_GET(param) {
                 var price2 =  document.createElement("p");
                 var image2 = document.createElement("img");
                 var description2  = document.createElement("p");
-
+                var lenses = document.createElement("div");
+               
                 /**Ajout des éléments à la div principale */
                 page2.appendChild(title2);
-                page2.appendChild(price2);
                 page2.appendChild(image2);
                 page2.appendChild(description2);
+                page2.appendChild(price2);
+                page2.appendChild(lenses);
 
                 console.log(page2);
 
-                /**Prise en compte du numéro de l'objet dans l'url ($_GET) et le faire
-                 * correspondre avec les données du tableau.
-                 */
-
-                var item =  $_GET("item");
-                console.log(item);
+                /** faire correspondre item ($get) avec les données du tableau */
 
                     var name = document.createTextNode(product[item].name);
                     var price = document.createTextNode(product[item].price/100 + " $");
                     var description = document.createTextNode(product[item].description);
-                   
+                    
     
                 /**Ajout des textes/images créés à leur div respective */
                         title2.appendChild(name);
                         price2.appendChild(price);
                         description2.appendChild(description);
                         image2.src = product[item].imageUrl;
+
+                /**Ajout des différentes options d'objectif */
+                var lense = product[item].lenses;
+                for (let i = 0; i < lense.length; i++) {
+                   var buttonLense = document.createElement("button");
+                   lenses.appendChild(buttonLense);
+                   var lensesText = document.createTextNode(lense[i]);
+                   buttonLense.appendChild(lensesText);
+                }
 
                 /**Création de classes */
 
@@ -86,9 +97,12 @@ function $_GET(param) {
             })
         }
 
+        /**Pour la page principale (home) */
+
         else {
         const product = getData()
         
+
         product.then(product=>{
             console.log(product)
 
