@@ -112,13 +112,13 @@
     position: absolute;
     font-size: 80px;
     z-index: 20;
-    color: white;
-    text-shadow: 2px 2px 0px rgb(75, 86, 88);
+    color: black;
+    text-shadow: 2.5px 2.5px 0px rgb(75, 86, 88);
         &__txt {
             position: absolute;
-            color: white;
+            color: black;
             font-size: 21px;
-            text-shadow: 1.5px 1.5px 0px rgb(75, 86, 88);
+            text-shadow: 1.5px 1.5px 1px white;
             text-align: justify;
         }
             &__btn {
@@ -128,31 +128,41 @@
             }
 }
 
+#slideTxt1 {
+    width:100%;
+}
+
+#slideTxt2 {
+    width:200%;
+}
+
+#slideTxt3 {
+    width:150%;
+}
+
+#slideTitle2 {
+    width: 200%;
+    text-align: center;
+}
+
+#slideTitle3 {
+    width: 150%;
+    text-align: center;
+}
+
 #item-title1 {
     top:20%;
-    right: 18%;
-        &__txt {
-            width: 300%;
-            margin-left: -85%;
-        }
+    right:6%;
 }
 
 #item-title2 {
     top: 5%;
-    left: 8%;
-        &__txt {
-            width: 250%;
-            margin-left: -50%;
-        }
+    left: 10px;
 }
 
 #item-title3 {
     top: 20%;
     right: 15%;
-        &__txt {
-            width: 280%;
-            margin-left: -90%;
-        }
 }
 
 #carousel-button3 {
