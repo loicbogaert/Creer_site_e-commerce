@@ -38,33 +38,6 @@ $blue : rgb(39, 165, 187);
 }
 
 
-/*boutons*/
-
-.item-title__btn {
-    background-color: transparent;
-    border: solid 3px white;
-    font-weight: bolder;
-    animation-name: illum;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-fill-mode: backwards;
-        &:hover {
-            -webkit-animation: 0;
-            transition-duration: 1s;
-            background-color: #00ffcc;
-            color : black ;
-            box-shadow: 0 0 5px #00ffcc,
-                        0 0 25px #00ffcc,
-                        0 0 50px #00ffcc,
-                        0 0 200px #00ffcc,
-                        0 0 200px grey,
-                        0 0 150px grey;
-            text-shadow: -1px 3px 10px black;
-            text-decoration: none;
-            border: #00ffcc;
-        }
-}
-
 /*links*/
 
 .link {
@@ -84,9 +57,9 @@ $blue : rgb(39, 165, 187);
 }
 
 
-/*button carousel*/
+/*animations*/
 
-
+/*anim de bouton (carousel)*/
 @keyframes illum {
 
     from {
@@ -109,3 +82,25 @@ $blue : rgb(39, 165, 187);
         0 0 150px grey,
     }
 }
+
+        /*animation du bouton ajouter au panier*/
+
+        @keyframes buttonTranslate{
+            0% {
+                transform: translateX(200px) translateY(-50px);
+            }
+    
+            100% {
+                transform: translateX(0px) translateY(-50px);
+            }
+        }
+
+        @keyframes buttonColor {
+            0% {
+            }
+
+            100% {
+                color: black;
+                border-color: black;
+            }
+        }

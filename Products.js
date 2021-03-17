@@ -1,8 +1,5 @@
-
-/*get id (prendre id de la page) (voir liens)*/
-
-
 /**Récuperer parametres d'une url */
+
 function $_GET(param) {
     var vars = {};
     window.location.href.replace( location.hash, '' ).replace( 
@@ -99,6 +96,14 @@ function $_GET(param) {
                    choiceContainer.appendChild(buttonLense);
                    choiceContainer.appendChild(lensesLabel);
                    lenses.appendChild(choiceContainer);
+
+                   /** écoute du choix de lentille */
+                   buttonLense.value = lense[i];
+
+                   buttonLense.addEventListener('input', function(event){
+                      var clientInput = event.target.value;
+                      console.log(clientInput);
+                   })
                 }
 
                 /**Création de classes */
@@ -158,16 +163,13 @@ function $_GET(param) {
     var div4 = document.createElement("p");
     div4.classList.add ("main__code");
 
-    /*Création des éléments de texte*/
+    /*Création des éléments de texte et img*/
 
     var id = document.createTextNode ("product reference : " + product[i]._id);
     var name = document.createTextNode(product[i].name);
     var price = document.createTextNode(product[i].price/100 + " $");
     var description = document.createTextNode(product[i].description);
         
-
-    /*Céation des images*/
-
     var image = document.createElement("img");
     image.src = product[i].imageUrl;
 

@@ -75,25 +75,3 @@
                     }
         }
 
-
-        /*animation du bouton ajouter au panier*/
-
-        @keyframes buttonTranslate{
-            0% {
-                transform: translateX(200px) translateY(-50px);
-            }
-    
-            100% {
-                transform: translateX(0px) translateY(-50px);
-            }
-        }
-
-        @keyframes buttonColor {
-            0% {
-            }
-
-            100% {
-                color: black;
-                border-color: black;
-            }
-        }

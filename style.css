@@ -31,27 +31,6 @@
   font-family: "Akaya Telivigala", cursive;
 }
 
-/*boutons*/
-.item-title__btn {
-  background-color: transparent;
-  border: solid 3px white;
-  font-weight: bolder;
-  animation-name: illum;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: backwards;
-}
-.item-title__btn:hover {
-  -webkit-animation: 0;
-  transition-duration: 1s;
-  background-color: #00ffcc;
-  color: black;
-  box-shadow: 0 0 5px #00ffcc, 0 0 25px #00ffcc, 0 0 50px #00ffcc, 0 0 200px #00ffcc, 0 0 200px grey, 0 0 150px grey;
-  text-shadow: -1px 3px 10px black;
-  text-decoration: none;
-  border: #00ffcc;
-}
-
 /*links*/
 .link {
   text-decoration: none !important;
@@ -67,13 +46,29 @@
   text-shadow: 1px 1px 2px white;
 }
 
-/*button carousel*/
+/*animations*/
+/*anim de bouton (carousel)*/
 @keyframes illum {
   from {
     text-shadow: transparent;
   }
   to {
     text-shadow: 0px 0px 50px #00ffcc, 0px 0px 10px #00ffcc, 0px 0px 20px #00ffcc, 0px 0px 30px #00ffcc, 0px 0px 40px #00ffcc, 0px 0px 80px #00ffcc, 0px 0px 120px #00ffcc, 0px 0px 180px #00ffcc, 0 0 100px #00ffcc, 0 0 150px #00ffcc, 0 0 200px #00ffcc, 0 0 200px grey, 0 0 150px grey;
+  }
+}
+/*animation du bouton ajouter au panier*/
+@keyframes buttonTranslate {
+  0% {
+    transform: translateX(200px) translateY(-50px);
+  }
+  100% {
+    transform: translateX(0px) translateY(-50px);
+  }
+}
+@keyframes buttonColor {
+  100% {
+    color: black;
+    border-color: black;
   }
 }
 /*header*/
@@ -250,6 +245,42 @@
   left: 5%;
 }
 
+/*boutons carousel*/
+.item-title__btn {
+  background-color: transparent;
+  border: solid 3px white;
+  font-weight: bolder;
+  animation-name: illum;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+  -o-animation-name: illum;
+  -o-animation-duration: 2s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-fill-mode: backwards;
+  -webkit-animation-name: illum;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: backwards;
+  -moz-animation-name: illum;
+  -moz-animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-fill-mode: backwards;
+}
+.item-title__btn:hover {
+  -moz-animation: 0;
+  -o-animation: 0;
+  -webkit-animation: 0;
+  animation: 0;
+  transition-duration: 1s;
+  background-color: #00ffcc;
+  color: black;
+  box-shadow: 0 0 5px #00ffcc, 0 0 25px #00ffcc, 0 0 50px #00ffcc, 0 0 200px #00ffcc, 0 0 200px grey, 0 0 150px grey;
+  text-shadow: -1px 3px 10px black;
+  text-decoration: none;
+  border: #00ffcc;
+}
+
 /*Partie Main*/
 .main {
   width: 100%;
@@ -389,27 +420,6 @@ img {
   font-family: "Akaya Telivigala", cursive;
 }
 
-/*boutons*/
-.item-title__btn {
-  background-color: transparent;
-  border: solid 3px white;
-  font-weight: bolder;
-  animation-name: illum;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: backwards;
-}
-.item-title__btn:hover {
-  -webkit-animation: 0;
-  transition-duration: 1s;
-  background-color: #00ffcc;
-  color: black;
-  box-shadow: 0 0 5px #00ffcc, 0 0 25px #00ffcc, 0 0 50px #00ffcc, 0 0 200px #00ffcc, 0 0 200px grey, 0 0 150px grey;
-  text-shadow: -1px 3px 10px black;
-  text-decoration: none;
-  border: #00ffcc;
-}
-
 /*links*/
 .link {
   text-decoration: none !important;
@@ -425,13 +435,29 @@ img {
   text-shadow: 1px 1px 2px white;
 }
 
-/*button carousel*/
+/*animations*/
+/*anim de bouton (carousel)*/
 @keyframes illum {
   from {
     text-shadow: transparent;
   }
   to {
     text-shadow: 0px 0px 50px #00ffcc, 0px 0px 10px #00ffcc, 0px 0px 20px #00ffcc, 0px 0px 30px #00ffcc, 0px 0px 40px #00ffcc, 0px 0px 80px #00ffcc, 0px 0px 120px #00ffcc, 0px 0px 180px #00ffcc, 0 0 100px #00ffcc, 0 0 150px #00ffcc, 0 0 200px #00ffcc, 0 0 200px grey, 0 0 150px grey;
+  }
+}
+/*animation du bouton ajouter au panier*/
+@keyframes buttonTranslate {
+  0% {
+    transform: translateX(200px) translateY(-50px);
+  }
+  100% {
+    transform: translateX(0px) translateY(-50px);
+  }
+}
+@keyframes buttonColor {
+  100% {
+    color: black;
+    border-color: black;
   }
 }
 /*format scale*/
@@ -441,7 +467,7 @@ img {
     font-size: 30px;
   }
   .item-title__txt {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   #item-title2 {
@@ -520,27 +546,6 @@ img {
   font-family: "Akaya Telivigala", cursive;
 }
 
-/*boutons*/
-.item-title__btn {
-  background-color: transparent;
-  border: solid 3px white;
-  font-weight: bolder;
-  animation-name: illum;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: backwards;
-}
-.item-title__btn:hover {
-  -webkit-animation: 0;
-  transition-duration: 1s;
-  background-color: #00ffcc;
-  color: black;
-  box-shadow: 0 0 5px #00ffcc, 0 0 25px #00ffcc, 0 0 50px #00ffcc, 0 0 200px #00ffcc, 0 0 200px grey, 0 0 150px grey;
-  text-shadow: -1px 3px 10px black;
-  text-decoration: none;
-  border: #00ffcc;
-}
-
 /*links*/
 .link {
   text-decoration: none !important;
@@ -556,13 +561,29 @@ img {
   text-shadow: 1px 1px 2px white;
 }
 
-/*button carousel*/
+/*animations*/
+/*anim de bouton (carousel)*/
 @keyframes illum {
   from {
     text-shadow: transparent;
   }
   to {
     text-shadow: 0px 0px 50px #00ffcc, 0px 0px 10px #00ffcc, 0px 0px 20px #00ffcc, 0px 0px 30px #00ffcc, 0px 0px 40px #00ffcc, 0px 0px 80px #00ffcc, 0px 0px 120px #00ffcc, 0px 0px 180px #00ffcc, 0 0 100px #00ffcc, 0 0 150px #00ffcc, 0 0 200px #00ffcc, 0 0 200px grey, 0 0 150px grey;
+  }
+}
+/*animation du bouton ajouter au panier*/
+@keyframes buttonTranslate {
+  0% {
+    transform: translateX(200px) translateY(-50px);
+  }
+  100% {
+    transform: translateX(0px) translateY(-50px);
+  }
+}
+@keyframes buttonColor {
+  100% {
+    color: black;
+    border-color: black;
   }
 }
 .productPage {
@@ -638,22 +659,6 @@ img {
   animation-name: buttonColor;
   animation-duration: 2s;
   animation-fill-mode: forwards;
-}
-
-/*animation du bouton ajouter au panier*/
-@keyframes buttonTranslate {
-  0% {
-    transform: translateX(200px) translateY(-50px);
-  }
-  100% {
-    transform: translateX(0px) translateY(-50px);
-  }
-}
-@keyframes buttonColor {
-  100% {
-    color: black;
-    border-color: black;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

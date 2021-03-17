@@ -181,6 +181,51 @@
 }
 
 
+/*boutons carousel*/
+
+.item-title__btn {
+    background-color: transparent;
+    border: solid 3px white;
+    font-weight: bolder;
+
+    animation-name: illum;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: backwards;
+
+    -o-animation-name: illum;
+    -o-animation-duration: 2s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-fill-mode: backwards;
+
+    -webkit-animation-name: illum;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-fill-mode: backwards;
+
+    -moz-animation-name: illum;
+    -moz-animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-fill-mode: backwards;
+        &:hover {
+            -moz-animation: 0;
+            -o-animation: 0;
+            -webkit-animation: 0;
+            animation: 0;
+            transition-duration: 1s;
+            background-color: #00ffcc;
+            color : black ;
+            box-shadow: 0 0 5px #00ffcc,
+                        0 0 25px #00ffcc,
+                        0 0 50px #00ffcc,
+                        0 0 200px #00ffcc,
+                        0 0 200px grey,
+                        0 0 150px grey;
+            text-shadow: -1px 3px 10px black;
+            text-decoration: none;
+            border: #00ffcc;
+        }
+}
 
 
 /*Partie Main*/
