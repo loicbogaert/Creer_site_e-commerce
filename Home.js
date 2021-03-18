@@ -105,46 +105,24 @@ for (let i = 0; i < product.length; i++) {
 
         product.then(product=> {
 
-                /**Prise des éléments du DOM */
+                /**Boucle pour afficher dynamiquement le carousel*/
 
-             var itemImg1 =  document.getElementById("slideImg1");
-             var itemTxt1 =  document.getElementById("slideTxt1");
-             var itemTitle1 = document.getElementById("slideTitle1");
+            var carouItem = new Array;
+            carouItem =  document.getElementsByClassName("carousel-item");
 
-             var itemImg2 =  document.getElementById("slideImg2");
-             var itemTxt2 =  document.getElementById("slideTxt2");
-             var itemTitle2 = document.getElementById("slideTitle2");
+            for(let i = 0; i < carouItem.length; i++) {
 
-             var itemImg3 =  document.getElementById("slideImg3");
-             var itemTxt3 =  document.getElementById("slideTxt3");
-             var itemTitle3 = document.getElementById("slideTitle3");
-             
-                /**Création des text nodes */
+                var description = document.createTextNode(product[i].description);
+                var title = document.createTextNode(product[i].name);
+    
+                var carouImg = document.getElementsByClassName("img-fluid");
+                var carouTxt = document.getElementsByClassName("carouTxt");
+                var carouTitle = document.getElementsByClassName("carouTitle");
 
-             var description1 = document.createTextNode(product[1].description);
-             var description2 = document.createTextNode(product[2].description);
-             var description3 = document.createTextNode(product[3].description);
-
-             var title1 = document.createTextNode(product[1].name);
-             var title2 = document.createTextNode(product[2].name);
-             var title3 = document.createTextNode(product[3].name);
-
-
-                /**Assembler les textes et images aux objets du DOM (carousel) */
-
-            itemImg1.setAttribute("src", product[1].imageUrl);
-            itemImg2.setAttribute("src", product[2].imageUrl); 
-            itemImg3.setAttribute("src", product[3].imageUrl);  
-
-            itemTxt1.appendChild(description1);
-            itemTxt2.appendChild(description2);
-            itemTxt3.appendChild(description3);
-            
-            itemTitle1.appendChild(title1);
-            itemTitle2.appendChild(title2);
-            itemTitle3.appendChild(title3);
-            
-
+                carouImg[i].setAttribute("src", product[i].imageUrl);
+                carouTxt[i].appendChild(description);
+                carouTitle[i].appendChild(title);
+            }
         })
     }
     
