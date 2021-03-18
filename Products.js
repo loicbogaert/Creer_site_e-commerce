@@ -1,14 +1,7 @@
 
  if(window.location.href.indexOf("item") != -1){
-        
-    product.then(product=>{
-        console.log(product);
-        console.log("this worked !");
 
-        /**Prise en compte du numéro de l'objet dans l'url avec la méthode ($_GET) */
-
-        var item =  $_GET("item");
-        console.log(item);
+    itemId.then(itemId=>{
 
         /*Div principale de la page produit*/
         var page2 = document.getElementById("pageProduct");
@@ -31,15 +24,12 @@
         page2.appendChild(price2);
         page2.appendChild(lensesChoice);
         page2.appendChild(lenses);
-        
-
-        console.log(page2);
 
         /** faire correspondre item ($get) avec les données du tableau */
 
-            var name = document.createTextNode(product[item].name);
-            var price = document.createTextNode(product[item].price/100 + " $");
-            var description = document.createTextNode(product[item].description);
+            var name = document.createTextNode(itemId.name);
+            var price = document.createTextNode(itemId.price/100 + " $");
+            var description = document.createTextNode(itemId.description);
             
 
         /**Ajout des textes/images créés à leur div respective */
@@ -47,11 +37,11 @@
                 title2.appendChild(name);
                 price2.appendChild(price);
                 description2.appendChild(description);
-                image2.src = product[item].imageUrl;
+                image2.src = itemId.imageUrl;
 
 
         /**Ajout des différentes options de lentille */
-        var lense = product[item].lenses;
+        var lense = itemId.lenses;
         for (let i = 0; i < lense.length; i++) {
            var buttonLense = document.createElement("input");
            buttonLense.setAttribute("type", "radio");
@@ -89,8 +79,4 @@
         lensesChoice.classList.add("productPage__lenseType");
 
     })
-}
-
-else {
-    console.log("error if in product page")
 }

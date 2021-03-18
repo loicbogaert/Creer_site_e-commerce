@@ -5,10 +5,9 @@
     /** reprise des données de l'api*/ 
 
         product.then(product=>{
-            console.log(product)
 
 /**
- * Boucle qui s'active pour chaque élément du tableau Product contenant les objets de l'api
+ * Boucle pour chaque élément du tableau Product (objets de l'API)
 */
 
 for (let i = 0; i < product.length; i++) {
@@ -18,15 +17,6 @@ for (let i = 0; i < product.length; i++) {
     var divSquare = document.createElement("div")
     divSquare.className = 'main__square';
     divSquare.id = 'mainSquare' + [i];
-
-
-    /*Ajout des classes bootstrap*/
-
-    divSquare.classList.add("col-9");
-    divSquare.classList.add("col-md-5");
-    divSquare.classList.add("col-md-5");
-    divSquare.classList.add("col-lg-3");
-
 
     /*création des éléments + noms de classe*/
 
@@ -73,7 +63,13 @@ for (let i = 0; i < product.length; i++) {
         div3.appendChild(description);
 
         document.getElementById('mainSquare' + [i]).appendChild(div4);
-        div4.appendChild(id);        
+        div4.appendChild(id);     
+        
+/*Ajout des classes bootstrap*/
+
+    divSquare.classList.add("col-9");
+    divSquare.classList.add("col-md-5");
+    divSquare.classList.add("col-lg-3");
 
  }
 })
@@ -81,7 +77,6 @@ for (let i = 0; i < product.length; i++) {
         /**Modification des url pour chaque objet différent*/
         
         product.then(product=>{
-            console.log(product)
 
             for (let i = 0; i < product.length; i++) {
 
@@ -92,7 +87,7 @@ for (let i = 0; i < product.length; i++) {
     
     
             elements.onclick = function PageRedirect () {
-                window.location.href = "Products.html?item=" + [i]; /** mettre l'id des objets plutot que le [i]*/
+                window.location.href = "Products.html?itemId=" + (product[i]._id);
                 productPage.innerHTML = elements.innerHTML;
             }
             }
@@ -126,6 +121,3 @@ for (let i = 0; i < product.length; i++) {
         })
     }
     
-else {
-    console.log ("if in Home page, error related to Home.js")
-}
