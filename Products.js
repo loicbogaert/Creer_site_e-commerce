@@ -1,5 +1,5 @@
 
- if(window.location.href.indexOf("item") != -1){
+ if(window.location.href.indexOf("itemId") != -1){
 
     itemId.then(itemId=>{
 
@@ -13,6 +13,7 @@
         var description2  = document.createElement("p");
         var lenses = document.createElement("div");
 
+        /**texte choix de lentille */
         var lensesChoice =  document.createElement("p");
         var createChoice =  document.createTextNode("Please choose your lense type :");
         lensesChoice.appendChild(createChoice);
@@ -65,9 +66,29 @@
 
            buttonLense.addEventListener('input', function(event){
               var clientInput = event.target.value;
-              console.log(clientInput);
+                
+                /**Bouton qui prend l'info au clic */
+
+                
+
+              var cartButton = document.getElementById("cartButton");
+              cartButton.onclick = function(){
+                  
+                 var InCart = new Object();
+
+                InCart.cartLense = clientInput;
+                InCart.cartName = name;
+                InCart.cartPrice = price;
+                InCart.cartImg = itemId.imgUrl;
+                
+
+                    ProductInCart.push(InCart);
+                    console.log(ProductInCart);
+              }
            })
+           
         }
+
 
         /**Création de classes */
 

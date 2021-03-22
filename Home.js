@@ -1,8 +1,4 @@
-        /**Pour la page principale (home) (check URL)*/
-
-        if (window.location.href == "http://127.0.0.1:5500/Home.html") {
-        
-    /** reprise des données de l'api*/ 
+       /** reprise des données de l'api*/ 
 
         product.then(product=>{
 
@@ -22,16 +18,12 @@ for (let i = 0; i < product.length; i++) {
 
     var divImg = document.createElement("div");
     divImg.classList.add("main__img");
-
     var div = document.createElement("h2");
     div.classList.add ("main__title", "bold");
-
     var div2 = document.createElement("p");
     div2.classList.add ("main__price");
-
     var div3 = document.createElement("p");
     div3.classList.add ("main__description");
-
     var div4 = document.createElement("p");
     div4.classList.add ("main__code");
 
@@ -52,16 +44,12 @@ for (let i = 0; i < product.length; i++) {
 
         document.getElementById('mainSquare' + [i]).appendChild(divImg);
         divImg.appendChild(image);
-
         document.getElementById('mainSquare' + [i]).appendChild(div);
         div.appendChild(name);
-
         document.getElementById('mainSquare' + [i]).appendChild(div2);
         div2.appendChild(price);
-
         document.getElementById('mainSquare' + [i]).appendChild(div3);
         div3.appendChild(description);
-
         document.getElementById('mainSquare' + [i]).appendChild(div4);
         div4.appendChild(id);     
         
@@ -77,14 +65,12 @@ for (let i = 0; i < product.length; i++) {
         /**Modification des url pour chaque objet différent*/
         
         product.then(product=>{
-
             for (let i = 0; i < product.length; i++) {
 
             var elements =  document.getElementById('mainSquare' + [i]);
             var productPage = document.getElementById("pageProduct");
     
             /*Chaque produit amène sur la "page produit" + change les éléments de la page produits*/
-    
     
             elements.onclick = function PageRedirect () {
                 window.location.href = "Products.html?itemId=" + (product[i]._id);
@@ -93,11 +79,9 @@ for (let i = 0; i < product.length; i++) {
             }
         })
 
-
 /**
  * Carrousel
  */
-
         product.then(product=> {
 
                 /**Boucle pour afficher dynamiquement le carousel*/
@@ -119,5 +103,4 @@ for (let i = 0; i < product.length; i++) {
                 carouTitle[i].appendChild(title);
             }
         })
-    }
     

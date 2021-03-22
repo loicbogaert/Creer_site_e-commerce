@@ -14,10 +14,6 @@ function $_GET(param) {
 	}
 	return vars;
 }
-
-    /**Prise des parametres URL pour "itemId"" (page product)*/
-    
-    var theId = ($_GET("itemId"));
     
     /*Array avec les données de l'API*/
 
@@ -33,7 +29,11 @@ function $_GET(param) {
         console.log(product);
     })
 
-    /**Données de l'API pour la page product (Selon l'ID des objets)*/
+        /**Prise des parametres URL pour "itemId"" (page product)*/
+    
+        var theId = ($_GET("itemId"));
+
+    /**Données de l'API pour la page product (Selon l'ID de l'objets)*/
 
     async function getById() {
         let byId = await fetch("http://localhost:2000/api/cameras/" + (theId));
