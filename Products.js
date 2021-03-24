@@ -31,6 +31,7 @@
             var name = document.createTextNode(itemId.name);
             var price = document.createTextNode(itemId.price/100 + " $");
             var description = document.createTextNode(itemId.description);
+            var imageUrl = document.createTextNode(itemId.imageUrl);
             
 
         /**Ajout des textes/images créés à leur div respective */
@@ -67,8 +68,8 @@
            buttonLense.addEventListener('input', function(event){
               var clientInput = event.target.value;
                 
-                /**Bouton qui prend l'info au clic */
 
+                /**Bouton qui prend l'info au clic */
                 
 
               var cartButton = document.getElementById("cartButton");
@@ -79,7 +80,7 @@
                 InCart.cartLense = clientInput;
                 InCart.cartName = name;
                 InCart.cartPrice = price;
-                InCart.cartImg = itemId.imgUrl;
+                InCart.cartImg = imageUrl;
                 
 
                     ProductInCart.push(InCart);
