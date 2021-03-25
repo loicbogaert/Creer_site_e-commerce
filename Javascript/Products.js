@@ -1,10 +1,9 @@
-
-{
-
-    itemId.then(itemId=>{
+   itemId.then(itemId=>{
 
 /**créer une classe qui s'appelle objet pour les articles pour le faire en orienter objet*/
 /** */
+let cameraProduct = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id);
+console.log(cameraProduct);
 
         /*Div principale de la page produit*/
         var page = document.getElementById("pageProduct");
@@ -15,6 +14,7 @@
         var image = document.createElement("img");
         var description  = document.createElement("p");
         var lenses = document.createElement("div");
+
 
         /**texte choix de lentille */
         var lensesChoice =  document.createElement("p");
@@ -31,10 +31,9 @@
 
         /** faire correspondre item ($get) avec les données du tableau */
 
-            var productName = document.createTextNode(itemId.name);
-            var productPrice = document.createTextNode(itemId.price/100 + " $");
-            var productDescription = document.createTextNode(itemId.description);
-            var productImageUrl = document.createTextNode(itemId.imageUrl);
+            var productName = document.createTextNode(cameraProduct.name);
+            var productPrice = document.createTextNode(cameraProduct.price);
+            var productDescription = document.createTextNode(cameraProduct.description);
             
 
         /**Ajout des textes/images créés à leur div respective */
@@ -42,7 +41,7 @@
                 title.appendChild(productName);
                 price.appendChild(productPrice);
                 description.appendChild(productDescription);
-                image.src = itemId.imageUrl;
+                image.src = cameraProduct.image;
 
 
         /**Ajout des différentes options de lentille */
@@ -106,4 +105,3 @@
         lensesChoice.classList.add("productPage__lenseType");
 
     })
-}
