@@ -1,14 +1,18 @@
-    
     /** reprise des données de l'api*/ 
      product.then(product=>{
+
 
 /**Fonction de création des éléments de la page Home */
 
 function addElements (){
+
+
     for (let i = 0; i < product.length; i++) {
 
-        let camera = new Camera (product[i].name, product[i].price, product[i].imageUrl, product[i].description, product[i]._id);
+        let camera = new Camera(product[i].name, product[i].price, product[i].imageUrl, product[i].description, product[i]._id);
+        console.log (camera); 
 
+        
         /*Création des différentes div (1 div = un produit) + ajout classe / id*/
     
         var divSquare = document.createElement("div")
