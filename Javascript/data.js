@@ -26,7 +26,6 @@ function $_GET(param) {
     const product = getData()
 
     product.then(product=>{
-        console.log(product);
     })
 
         /**Prise des parametres URL pour "itemId"" (page product)*/

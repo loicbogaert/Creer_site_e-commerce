@@ -1,7 +1,7 @@
-   itemId.then(itemId=>{
 
-/**créer une classe qui s'appelle objet pour les articles pour le faire en orienter objet*/
-/** */
+  itemId.then(itemId=>{
+
+/***/
 let cameraProduct = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id);
 console.log(cameraProduct);
 
@@ -71,30 +71,12 @@ console.log(cameraProduct);
 
            buttonLense.addEventListener('input', function(event){
               var clientInput = event.target.value;
-                
-
-                /**Bouton qui prend l'info au clic */
-                
-
-              var cartButton = document.getElementById("cartButton");
-              cartButton.onclick = function(){
-                  
-                 var InCart = new Object(); /**ici faire le json */
-
-                InCart.cartLense = clientInput;
-                InCart.cartName = productName;
-                InCart.cartPrice = productPrice;
-                InCart.cartImg = itemId.imageUrl;
-                
-
-                    ProductInCart.push(InCart);
-                    console.log(ProductInCart);
-              }
            })
+         
            
-        }
 
-
+   }
+console.log(localStorage);
         /**Création de classes */
 
         page.classList.add("productPage");
@@ -105,3 +87,31 @@ console.log(cameraProduct);
         lensesChoice.classList.add("productPage__lenseType");
 
     })
+
+
+    itemId.then(itemId=>{
+
+                /**Bouton pour ajouter au panier (localStorage) */
+               
+                var cartButton = document.getElementById("cartButton");
+                cartButton.onclick = function(){
+
+                  let cameraBasket = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id)
+
+            let data = JSON.parse(localStorage.getItem("basket"))
+        
+            if (data) {
+               data.push (cameraBasket)
+
+               localStorage.setItem("basket", JSON.stringify(data))
+               console.log(localStorage)
+            } else {
+               var tab = new Array;
+
+               tab.push(cameraBasket)
+
+               localStorage.setItem("basket", JSON.stringify(tab))
+               console.log(localStorage)
+            }
+     }
+   })

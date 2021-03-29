@@ -3,14 +3,11 @@
 
 
 /**Fonction de création des éléments de la page Home */
-
 function addElements (){
 
-
+    console.log(cameraArray);
     for (let i = 0; i < product.length; i++) {
-
         let camera = new Camera(product[i].name, product[i].price, product[i].imageUrl, product[i].description, product[i]._id);
-        console.log (camera); 
 
         
         /*Création des différentes div (1 div = un produit) + ajout classe / id*/
@@ -20,7 +17,6 @@ function addElements (){
         divSquare.id = 'mainSquare' + [i];
     
         /*création des éléments + noms de classe*/
-    
         var divImg = document.createElement("div");
         divImg.classList.add("main__img");
         var div = document.createElement("h2");
@@ -31,6 +27,7 @@ function addElements (){
         div3.classList.add ("main__description");
         var div4 = document.createElement("p");
         div4.classList.add ("main__code");
+
 
                 
         /*Ajout des classes bootstrap*/
