@@ -76,7 +76,6 @@ console.log(cameraProduct);
            
 
    }
-console.log(localStorage);
         /**Création de classes */
 
         page.classList.add("productPage");
@@ -96,7 +95,7 @@ console.log(localStorage);
                 var cartButton = document.getElementById("cartButton");
                 cartButton.onclick = function(){
 
-                  let cameraBasket = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id)
+                  let cameraBasket = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1)
 
             let data = JSON.parse(localStorage.getItem("basket"))
         

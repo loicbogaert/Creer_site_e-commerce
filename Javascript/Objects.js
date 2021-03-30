@@ -1,12 +1,13 @@
        /**Classe d'objet de chaque caméra */
        
        class Camera  {
-        constructor (name, price, image, description, id) {
+        constructor (name, price, image, description, id, quantity) {
               this.name = name;
               this.price = price/100 + " $";
               this.image = image;
               this.description = description;
               this.id = id;
+              this.quantity = quantity;
           }
       };
 
