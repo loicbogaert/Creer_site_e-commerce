@@ -9,7 +9,6 @@ var eachProductName = document.createElement("h2");
 var eachProductLense = document.createElement("p");
 var eachProductImage = document.createElement("img");
 
-
 /**Prise du local storage pour la page panier */
 var basket__json = localStorage.getItem("basket")
 var basket = JSON.parse(basket__json);
@@ -34,6 +33,21 @@ for (var i = 0; i < basket.length; i++) {
     var eachProductImage = document.createElement("img");
     var eachProductId = document.createElement("p");
     var eachProductQuantity = document.createElement("p");
+
+      /**Création de classes + bootstrap*/
+
+      eachProduct.classList.add("cartPage");
+      eachProductPrice.classList.add("cartPage__price");
+      eachProductName.classList.add("cartPage__name");
+      eachProductImage.classList.add("cartPage__image");
+
+
+    
+      eachProduct.classList.add("col-9");
+      eachProduct.classList.add("col-md-4");
+      eachProduct.classList.add("col-lg-4");
+
+
 
     cartBody.appendChild(eachProduct);
     eachProduct.appendChild(eachProductImage);
@@ -61,3 +75,22 @@ for (var i = 0; i < basket.length; i++) {
 }
 }
 createElements();
+
+/**-----------------Fonction pour avoir le prix total du panier------ */
+
+function getTotalPrice() {
+
+    var docPrice = document.getElementById("totalPrice");
+    docPrice.classList.add("totalPrice");
+
+    var totalPrice = 0;
+
+    for (var i = 0; i < basket.length; i++) {
+        totalPrice += parseInt(basket[i].price);
+     }
+
+     var FinalPrice = document.createTextNode(totalPrice + " $");
+     docPrice.appendChild(FinalPrice);
+}
+
+getTotalPrice();

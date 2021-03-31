@@ -666,4 +666,72 @@ img {
   animation-fill-mode: forwards;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+.form__label {
+  font-size: 22px;
+  margin-top: 30px;
+  font-weight: bolder;
+}
+.form__input {
+  width: 400px;
+  height: 50px;
+}
+.form__button {
+  margin-top: 30px;
+}
+
+.formTitle {
+  width: 100%;
+  text-align: center;
+  font-weight: bolder;
+  margin-top: 20px;
+}
+
+.warning {
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.cartPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
+.cartPage__price {
+  font-weight: bold;
+}
+.cartPage__name {
+  font-weight: bold;
+  text-align: center;
+}
+.cartPage__image {
+  object-fit: cover;
+}
+
+#middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#priceLabel {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+#totalPrice {
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
 /*# sourceMappingURL=style.css.map */
