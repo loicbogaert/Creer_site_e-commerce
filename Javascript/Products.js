@@ -2,8 +2,7 @@
   itemId.then(itemId=>{
 
 /***/
-let cameraProduct = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id);
-console.log(cameraProduct);
+let cameraProduct = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1);
 
         /*Div principale de la page produit*/
         var page = document.getElementById("pageProduct");
@@ -47,23 +46,19 @@ console.log(cameraProduct);
         /**Ajout des différentes options de lentille */
 
         var lense = itemId.lenses;
+        var buttonLense = document.createElement("select");
+        buttonLense.setAttribute("name", "lense");
+        buttonLense.classList.add("productPage__checkbox");
+        var choiceContainer = document.createElement("div");
+        page.appendChild(choiceContainer);
+
+
         for (let i = 0; i < lense.length; i++) {
-           var buttonLense = document.createElement("input");
-           buttonLense.setAttribute("type", "radio");
-           buttonLense.setAttribute("name", "lense");
-           buttonLense.classList.add("productPage__checkbox");
+            var option = document.createElement("option");
+            option.setAttribute("value", lense[i])
+            var optionTextnode = document.createTextNode(lense[i]);
 
-           var choiceContainer = document.createElement("div");
-
-           var lensesLabel = document.createElement("label");
-           lenses.appendChild(lensesLabel);
-
-           var lensesText = document.createTextNode(lense[i]);
-           lensesLabel.appendChild(lensesText);
-
-           choiceContainer.appendChild(buttonLense);
-           choiceContainer.appendChild(lensesLabel);
-           lenses.appendChild(choiceContainer);
+            option.appendChild(optionTextnode);
 
            /** écoute du choix de lentille */
 
@@ -72,9 +67,9 @@ console.log(cameraProduct);
            buttonLense.addEventListener('input', function(event){
               var clientInput = event.target.value;
            })
-         
-           
-
+         console.log(lense)
+         choiceContainer.appendChild(buttonLense)
+         buttonLense.appendChild(option)
    }
         /**Création de classes */
 
@@ -89,28 +84,51 @@ console.log(cameraProduct);
 
 
     itemId.then(itemId=>{
+       
+      let cameraBasket = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1)
 
                 /**Bouton pour ajouter au panier (localStorage) */
-               
                 var cartButton = document.getElementById("cartButton");
                 cartButton.onclick = function(){
 
-                  let cameraBasket = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1)
-
             let data = JSON.parse(localStorage.getItem("basket"))
-        
-            if (data) {
-               data.push (cameraBasket)
 
-               localStorage.setItem("basket", JSON.stringify(data))
-               console.log(localStorage)
+            /** if id déjà présent, faire une incrémentation sur la quantité*/
+            function contains () {
+               if(data.some(data => data.name === cameraBasket.name)){
+                  return true;
+               } else {
+                  return false;
+               }
+                  }
+            
+            function incrémentation (){
+               cameraBasket.quantity ++
+               console.log(cameraBasket.quantity);
+               return cameraBasket;
+            }
+
+            if (data) { 
+               if(contains()){
+                  incrémentation()
+                  localStorage.setItem("basket", JSON.stringify(data))
+                  console.log(data)
+               }
+               else {
+                  data.push (cameraBasket)
+
+                  localStorage.setItem("basket", JSON.stringify(data))
+                  console.log(localStorage)
+                  console.log(data)
+               }
             } else {
-               var tab = new Array;
+                  var tab = new Array;
 
-               tab.push(cameraBasket)
+                  tab.push(cameraBasket)
 
-               localStorage.setItem("basket", JSON.stringify(tab))
-               console.log(localStorage)
+                  localStorage.setItem("basket", JSON.stringify(tab))
+                  console.log(localStorage)
+                  console.log(data)
             }
      }
-   })
+   })       

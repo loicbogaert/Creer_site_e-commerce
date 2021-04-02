@@ -1,6 +1,17 @@
        /**Classe d'objet de chaque caméra */
-       
+
        class Camera  {
+             name;
+             price;
+             image;
+             description;
+             id;
+             quantity;
+             getMyCamera() {
+                   return this.name, this.price, this.image, this.description, this.id, this.quantity;
+             }
+             /** déclarer les variables ici*/
+             /** en suite faire une fonction GET pour récupérer ces variables dans le reste du code*/
         constructor (name, price, image, description, id, quantity) {
               this.name = name;
               this.price = price/100 + " $";

@@ -18,15 +18,13 @@ console.log(basket);
 function createElements() {
 for (var i = 0; i < basket.length; i++) {
 
-    var basketQuantity = basket[i].quantity;
     var basketName = basket[i].name;
     var basketPrice = basket[i].price;
     var basketImg = basket[i].image;
     var basketId = basket[i].id;
+    var quantity = basket[i].quantity;
 
-    if (basketQuantity < 2) {
-
-        var eachProduct = document.createElement ("div");
+    var eachProduct = document.createElement ("div");
     var eachProductPrice = document.createElement("p");
     var eachProductName = document.createElement("h2");
     var eachProductLense = document.createElement("p");
@@ -35,12 +33,10 @@ for (var i = 0; i < basket.length; i++) {
     var eachProductQuantity = document.createElement("p");
 
       /**Création de classes + bootstrap*/
-
       eachProduct.classList.add("cartPage");
       eachProductPrice.classList.add("cartPage__price");
       eachProductName.classList.add("cartPage__name");
       eachProductImage.classList.add("cartPage__image");
-
 
     
       eachProduct.classList.add("col-9");
@@ -48,6 +44,7 @@ for (var i = 0; i < basket.length; i++) {
       eachProduct.classList.add("col-lg-4");
 
 
+/**Ajouter les éléments à la page */
 
     cartBody.appendChild(eachProduct);
     eachProduct.appendChild(eachProductImage);
@@ -60,7 +57,7 @@ for (var i = 0; i < basket.length; i++) {
     var names = document.createTextNode(basketName);  
     var id = document.createTextNode(basketId);
     var price = document.createTextNode(basketPrice);
-    var quantity = document.createTextNode(basketQuantity);
+    var quantity = document.createTextNode(quantity);
     
     eachProductName.appendChild(names);  
     eachProductId.appendChild(id);
@@ -68,12 +65,8 @@ for (var i = 0; i < basket.length; i++) {
     eachProductQuantity.appendChild(quantity);
     eachProductImage.src = basketImg;
     }
+}
 
-    else {
-        basketQuantity += 1;
-    }
-}
-}
 createElements();
 
 /**-----------------Fonction pour avoir le prix total du panier------ */
@@ -94,3 +87,6 @@ function getTotalPrice() {
 }
 
 getTotalPrice();
+
+var hello = document.getElementById("5be1ed3f1c9d44000030b061");
+console.log(hello)

@@ -45,10 +45,16 @@
         <input type="text" name="address" id="address" class="form__input" required minlength="10" maxlength="30">
 
         <label for="city" class="form__label">City</label>
-        <input type="text" name="city" id="city" class="form__input" required minlength="2" maxlength="20" pattern="[a-zA-Z]+" oninvalid="setCustomValidity('Only letters are accepted')">
+        <input type="text" name="city" id="city" class="form__input" required minlength="2" maxlength="20" pattern="[a-zA-Z]+">
 
         <label for="email" class="form__label">Email address</label>
         <input type="email" name="email" id="email" class="form__input" required>
+
+        <label for="card" class="form__label">Credit Card</label>
+        <input type="text" name="email" id="card" class="form__input" required>
+
+        <label for="expiration" class="form__label">expiration date</label>
+        <input type="text" name="" id="expiration" class="form__input" required>
 
         <p class="warning"> * If you can't get it right, try to avoid using special caracters</p>
 
