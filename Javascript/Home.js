@@ -13,7 +13,7 @@ function addElements (){
         /*Création des différentes div (1 div = un produit) + ajout classe / id*/
     
         var divSquare = document.createElement("div")
-        divSquare.className = 'main__square';
+        divSquare.classList.add ('main__square')
         divSquare.id = 'mainSquare' + [i];
     
         /*création des éléments + noms de classe*/

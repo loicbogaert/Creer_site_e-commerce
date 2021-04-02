@@ -4,7 +4,17 @@
   font-weight: bolder;
 }
 
+/*text color*/
+.white {
+  color: white;
+  text-shadow: black 2px 2px 2px;
+}
+
 /*background*/
+.whitebg {
+  background-color: #c2d2ed;
+}
+
 .background {
   background-color: #545e6e;
 }
@@ -398,7 +408,17 @@ img {
   font-weight: bolder;
 }
 
+/*text color*/
+.white {
+  color: white;
+  text-shadow: black 2px 2px 2px;
+}
+
 /*background*/
+.whitebg {
+  background-color: #c2d2ed;
+}
+
 .background {
   background-color: #545e6e;
 }
@@ -524,7 +544,17 @@ img {
   font-weight: bolder;
 }
 
+/*text color*/
+.white {
+  color: white;
+  text-shadow: black 2px 2px 2px;
+}
+
 /*background*/
+.whitebg {
+  background-color: #c2d2ed;
+}
+
 .background {
   background-color: #545e6e;
 }
