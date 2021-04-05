@@ -39,11 +39,11 @@
 
 .buttonWrap {
     height: 50px;
-    width: 200px;
+    width: 250px;
     margin-bottom: 50px;
     overflow: hidden;
         &__button {
-            width: 200px;
+            width: 250px;
             height: 50px;
             background-color: transparent;
             border: $blue solid 5px;
@@ -57,11 +57,11 @@
             &__animation {
                 display: block;
                 position: relative;
-                width: 200px;
+                width: 250px;
                 height: 50px;
                 background-color: white;
                 z-index: -1;
-                transform: translateX(200px) translateY(-50px);
+                transform: translateX(200px) translateY(-100px);
         }
                 &:hover &__animation{
                     animation-name: buttonTranslate;

@@ -20,6 +20,8 @@ function results() {
 
 
 
+/*------fonction qui vérifie le type de carte utilisée pour le paiement----------- */
+
     document.getElementById("card").addEventListener("keyup", CreditCard);
 
     function CreditCard() {
@@ -34,7 +36,6 @@ function results() {
             iconChange.classList.add("fab")
             iconChange.classList.add("fa-cc-visa")
         } else if (valid2) {
-            /*---------animation de changement de carte------------*/
             iconChange.classList.remove("fa-cc-visa")
             iconChange.classList.remove("fa-credit-card")
             iconChange.classList.remove("fas")
@@ -42,6 +43,11 @@ function results() {
             iconChange.classList.add("fab")
             iconChange.classList.add("fa-cc-mastercard")
         } else {
-
+            iconChange.classList.remove("fa-cc-visa")
+            iconChange.classList.remove("fa-cc-mastercard")
+            iconChange.classList.remove("fas")
+            iconChange.classList.remove("fab")
+            iconChange.classList.add("fas")
+            iconChange.classList.add("fa-credit-card")
         }
     }

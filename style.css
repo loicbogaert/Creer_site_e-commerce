@@ -65,7 +65,7 @@
 /*animation du bouton ajouter au panier*/
 @keyframes buttonTranslate {
   0% {
-    transform: translateX(200px) translateY(-50px);
+    transform: translateX(250px) translateY(-50px);
   }
   100% {
     transform: translateX(0px) translateY(-50px);
@@ -465,7 +465,7 @@ img {
 /*animation du bouton ajouter au panier*/
 @keyframes buttonTranslate {
   0% {
-    transform: translateX(200px) translateY(-50px);
+    transform: translateX(250px) translateY(-50px);
   }
   100% {
     transform: translateX(0px) translateY(-50px);
@@ -597,7 +597,7 @@ img {
 /*animation du bouton ajouter au panier*/
 @keyframes buttonTranslate {
   0% {
-    transform: translateX(200px) translateY(-50px);
+    transform: translateX(250px) translateY(-50px);
   }
   100% {
     transform: translateX(0px) translateY(-50px);
@@ -648,12 +648,12 @@ img {
 
 .buttonWrap {
   height: 50px;
-  width: 200px;
+  width: 250px;
   margin-bottom: 50px;
   overflow: hidden;
 }
 .buttonWrap__button {
-  width: 200px;
+  width: 250px;
   height: 50px;
   background-color: transparent;
   border: #27a5bb solid 5px;
@@ -667,11 +667,11 @@ img {
 .buttonWrap__animation {
   display: block;
   position: relative;
-  width: 200px;
+  width: 250px;
   height: 50px;
   background-color: white;
   z-index: -1;
-  transform: translateX(200px) translateY(-50px);
+  transform: translateX(200px) translateY(-100px);
 }
 .buttonWrap:hover .buttonWrap__animation {
   animation-name: buttonTranslate;
