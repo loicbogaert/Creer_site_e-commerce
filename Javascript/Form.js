@@ -12,3 +12,36 @@ function results() {
 }
 
 /** ajouter informations paiement + regex + regex avec picto selon les 4 premiers chiffres */
+/**(visa ou mastercard ?) */
+    var iconChange = document.getElementById("cardIcon");
+    
+    var regexVisa = /^[0-4][0-9][0-9][0-9]\s/;
+    var regexMaster = /^[5-9][0-9][0-9][0-9]\s/;
+
+
+
+    document.getElementById("card").addEventListener("keyup", CreditCard);
+
+    function CreditCard() {
+      const valid1 = regexVisa.test(document.getElementById("card").value)
+      const valid2 = regexMaster.test(document.getElementById("card").value)
+     
+        if (valid1) {
+            iconChange.classList.remove("fa-credit-card")
+            iconChange.classList.remove("fa-cc-mastercard")
+            iconChange.classList.remove("fas")
+            iconChange.classList.remove("fab")
+            iconChange.classList.add("fab")
+            iconChange.classList.add("fa-cc-visa")
+        } else if (valid2) {
+            /*---------animation de changement de carte------------*/
+            iconChange.classList.remove("fa-cc-visa")
+            iconChange.classList.remove("fa-credit-card")
+            iconChange.classList.remove("fas")
+            iconChange.classList.remove("fab")
+            iconChange.classList.add("fab")
+            iconChange.classList.add("fa-cc-mastercard")
+        } else {
+
+        }
+    }

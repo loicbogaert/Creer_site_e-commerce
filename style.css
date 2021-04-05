@@ -11,10 +11,6 @@
 }
 
 /*background*/
-.whitebg {
-  background-color: #c2d2ed;
-}
-
 .background {
   background-color: #545e6e;
 }
@@ -415,10 +411,6 @@ img {
 }
 
 /*background*/
-.whitebg {
-  background-color: #c2d2ed;
-}
-
 .background {
   background-color: #545e6e;
 }
@@ -551,10 +543,6 @@ img {
 }
 
 /*background*/
-.whitebg {
-  background-color: #c2d2ed;
-}
-
 .background {
   background-color: #545e6e;
 }
@@ -713,6 +701,32 @@ img {
 }
 .form__button {
   margin-top: 30px;
+}
+
+.creditCard {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+}
+.creditCard__info {
+  display: flex;
+  flex-direction: column;
+}
+.creditCard__label {
+  font-size: 20px;
+}
+.creditCard__input {
+  height: 40px;
+  width: 125%;
+}
+.creditCard__icon {
+  margin-top: 10px;
+  font-size: 65px;
+  align-self: center;
+  padding-right: 35px;
 }
 
 .formTitle {

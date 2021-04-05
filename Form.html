@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Anton&family=Oi&display=swap" rel="stylesheet">
     <title>Basket Form</title>
 </head>
-<body class="background">
+<body class="background white">
 
     <!-- 
     * Expects request to contain:
@@ -32,31 +32,39 @@
       !req.body.products) {
     return res.status(400).send(new Error('Bad request!'));
   }-->
+
+  <!--expiration date qui marche : ^(0[0-9]|1[0-9])\/(0[0-9]|1[0-9]|2[0-9]|3[0-1])\/(201[0-9]|202[0-9]|203[0-9])$ -->
+
 <h2 class="formTitle">To finalize your order, please fill out this form</h2>
 
     <form class="form" id="form" onsubmit="results()">
         <label for="firstName" class="form__label">Name</label>
-        <input type="text" name="firstName" id="firstName" class="form__input" required minlength="2" maxlength="15" pattern="[a-zA-Z]+">
+        <input type="text" name="firstName" id="firstName" class="form__input" minlength="2" maxlength="15" pattern="^[^0-9]+$" required>
 
         <label for="lastName" class="form__label">Lastname</label>
-        <input type="text" name="lastName" id="lastName" class="form__input" required minlength="2" maxlength="15" pattern="[a-zA-Z]+">
+        <input type="text" name="lastName" id="lastName" class="form__input" minlength="2" maxlength="15" pattern="^[^0-9]+$" required>
 
         <label for="address" class="form__label">Address</label>
-        <input type="text" name="address" id="address" class="form__input" required minlength="10" maxlength="30">
+        <input type="text" name="address" id="address" class="form__input" minlength="10" maxlength="30" required>
 
         <label for="city" class="form__label">City</label>
-        <input type="text" name="city" id="city" class="form__input" required minlength="2" maxlength="20" pattern="[a-zA-Z]+">
+        <input type="text" name="city" id="city" class="form__input" minlength="2" maxlength="20" pattern="^[^0-9]+$" required>
 
         <label for="email" class="form__label">Email address</label>
         <input type="email" name="email" id="email" class="form__input" required>
 
-        <label for="card" class="form__label">Credit Card</label>
-        <input type="text" name="email" id="card" class="form__input" required>
+        <div class="creditCard">
 
-        <label for="expiration" class="form__label">expiration date</label>
-        <input type="text" name="" id="expiration" class="form__input" required>
-
-        <p class="warning"> * If you can't get it right, try to avoid using special caracters</p>
+            <i class="fas fa-credit-card creditCard__icon" id="cardIcon"></i>
+            
+            <div class="creditCard__info">
+                <label for="card" class="creditCard__label">Credit Card</label>
+                <input type="text" name="email" id="card" class="creditCard__input" id="card" pattern="^[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9]\s[0-9]+?$" required>
+    
+                <label for="expiration" class="creditCard__label">expiration date</label>
+                <input type="text" name="" id="expiration" class="creditCard__input" pattern="^(0[0-9]|1[0-9])\/(0[0-9]|1[0-9]|2[0-9]|3[0-1])\/(201[0-9]|202[0-9]|203[0-9])$" required>
+            </div>
+        </div>
 
         <div class="buttonWrap form__Button">
             <button class="buttonWrap__button bold">Finalize your order  <i class="fas fa-cart-plus"></i></button>
@@ -64,6 +72,7 @@
         </div>
     </form>
 
+    <script src="https://kit.fontawesome.com/e06337b559.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="Javascript/Form.js"></script>
 </body>
 </html>

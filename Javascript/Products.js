@@ -67,7 +67,6 @@ let cameraProduct = new Camera (itemId.name, itemId.price, itemId.imageUrl, item
            buttonLense.addEventListener('input', function(event){
               var clientInput = event.target.value;
            })
-         console.log(lense)
          choiceContainer.appendChild(buttonLense)
          buttonLense.appendChild(option)
    }
@@ -84,9 +83,7 @@ let cameraProduct = new Camera (itemId.name, itemId.price, itemId.imageUrl, item
 
 
     itemId.then(itemId=>{
-       
       let cameraBasket = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1)
-
                 /**Bouton pour ajouter au panier (localStorage) */
                 var cartButton = document.getElementById("cartButton");
                 cartButton.onclick = function(){
@@ -103,32 +100,36 @@ let cameraProduct = new Camera (itemId.name, itemId.price, itemId.imageUrl, item
                   }
             
             function incrémentation (){
-               cameraBasket.quantity ++
+              cameraBasket.quantity ++
                console.log(cameraBasket.quantity);
-               return cameraBasket;
-            }
+            }       
+            var tab = new Array;
 
             if (data) { 
                if(contains()){
                   incrémentation()
-                  localStorage.setItem("basket", JSON.stringify(data))
-                  console.log(data)
+                  /**problemes : 
+                   * 
+                   * --- LocalStorage montre la bonne quantité incrémentée, mais au refresh, reprend la valeur 1 (valeur de base)
+                   * --- La donnée de tab est delete quand on ajoute une incrémentation
+                   * 
+                  */
+                  tab.push(cameraBasket)
+                  localStorage.setItem("basket", JSON.stringify(tab))
+                  console.log(localStorage)
                }
                else {
                   data.push (cameraBasket)
-
                   localStorage.setItem("basket", JSON.stringify(data))
                   console.log(localStorage)
-                  console.log(data)
                }
             } else {
-                  var tab = new Array;
-
                   tab.push(cameraBasket)
-
                   localStorage.setItem("basket", JSON.stringify(tab))
                   console.log(localStorage)
-                  console.log(data)
             }
      }
-   })       
+   }) 
+   
+   console.log(localStorage)
+
