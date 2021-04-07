@@ -19,7 +19,7 @@ function createElements() {
 for (var i = 0; i < basket.length; i++) {
 
     var basketName = basket[i].name;
-    var basketPrice = basket[i].price;
+    var basketPrice = basket[i].price/100 + "$";
     var basketImg = basket[i].image;
     var basketId = basket[i].id;
     var quantity = basket[i].quantity;
@@ -31,12 +31,23 @@ for (var i = 0; i < basket.length; i++) {
     var eachProductImage = document.createElement("img");
     var eachProductId = document.createElement("p");
     var eachProductQuantity = document.createElement("p");
+    eachProductQuantity.id = "quantity"+[i]
+    var ButtonPlus = document.createElement("button");
+    var ButtonMinus = document.createElement("button");
 
+    var ButtonContainer = document.createElement("div");
+    ButtonContainer.appendChild(ButtonPlus);    
+    ButtonContainer.appendChild(ButtonMinus);
       /**Création de classes + bootstrap*/
       eachProduct.classList.add("cartPage");
       eachProductPrice.classList.add("cartPage__price");
       eachProductName.classList.add("cartPage__name");
       eachProductImage.classList.add("cartPage__image");
+
+      ButtonPlus.classList.add("incrementButton");
+      ButtonPlus.id = "buttonPlus"+[i];
+      ButtonMinus.classList.add("incrementButton");
+      ButtonMinus.id = "buttonMinus"+[i];
 
     
       eachProduct.classList.add("col-9");
@@ -53,17 +64,32 @@ for (var i = 0; i < basket.length; i++) {
     eachProduct.appendChild(eachProductPrice);
     eachProduct.appendChild(eachProductId);
     eachProduct.appendChild(eachProductQuantity);
+    eachProduct.appendChild(ButtonContainer);
 
     var names = document.createTextNode(basketName);  
     var id = document.createTextNode(basketId);
     var price = document.createTextNode(basketPrice);
     var quantity = document.createTextNode(quantity);
+    var plus = document.createTextNode("+");
+    var minus = document.createTextNode("-");
+    ButtonPlus.appendChild(plus);
+    ButtonMinus.appendChild(minus);
     
     eachProductName.appendChild(names);  
     eachProductId.appendChild(id);
     eachProductPrice.appendChild(price);
     eachProductQuantity.appendChild(quantity);
     eachProductImage.src = basketImg;
+
+
+    /** Boutons d'ajout et retrait de la quantité pour un même objet
+     * faire une fonction
+     * ajouter / retirer sur localStorage
+    */
+    document.getElementById("buttonPlus"+[i]).addEventListener("click", event => {
+    });
+    document.getElementById("buttonMinus"+[i]).addEventListener("click", event => {
+    });
     }
 }
 
@@ -79,7 +105,7 @@ function getTotalPrice() {
     var totalPrice = 0;
 
     for (var i = 0; i < basket.length; i++) {
-        totalPrice += parseInt(basket[i].price);
+        totalPrice += parseInt(basket[i].price/100);
      }
 
      var FinalPrice = document.createTextNode(totalPrice + " $");
@@ -88,5 +114,4 @@ function getTotalPrice() {
 
 getTotalPrice();
 
-var hello = document.getElementById("5be1ed3f1c9d44000030b061");
-console.log(hello)
+

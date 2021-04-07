@@ -40,7 +40,7 @@ function addElements (){
     
                 var id = document.createTextNode ("product reference : " + camera.id);
                 var name = document.createTextNode(camera.name);
-                var price = document.createTextNode(camera.price);
+                var price = document.createTextNode(camera.CalculatedPrice);
                 var description = document.createTextNode(camera.description);    
        
                 var image = document.createElement("img");

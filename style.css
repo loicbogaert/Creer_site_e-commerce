@@ -52,6 +52,16 @@
   text-shadow: 1px 1px 2px white;
 }
 
+/*boutons du panier*/
+.incrementButton {
+  color: #27a5bb;
+  width: 55px;
+  height: 55px;
+  margin: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
 /*animations*/
 /*anim de bouton (carousel)*/
 @keyframes illum {
@@ -452,6 +462,16 @@ img {
   text-shadow: 1px 1px 2px white;
 }
 
+/*boutons du panier*/
+.incrementButton {
+  color: #27a5bb;
+  width: 55px;
+  height: 55px;
+  margin: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
 /*animations*/
 /*anim de bouton (carousel)*/
 @keyframes illum {
@@ -582,6 +602,16 @@ img {
 /*icon*/
 .fa-search {
   text-shadow: 1px 1px 2px white;
+}
+
+/*boutons du panier*/
+.incrementButton {
+  color: #27a5bb;
+  width: 55px;
+  height: 55px;
+  margin: 10px;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 /*animations*/

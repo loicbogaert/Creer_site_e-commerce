@@ -2,7 +2,8 @@
   itemId.then(itemId=>{
 
 /***/
-let cameraProduct = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1);
+const cameraProduct = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1);
+console.log(cameraProduct)
 
         /*Div principale de la page produit*/
         var page = document.getElementById("pageProduct");
@@ -31,7 +32,7 @@ let cameraProduct = new Camera (itemId.name, itemId.price, itemId.imageUrl, item
         /** faire correspondre item ($get) avec les données du tableau */
 
             var productName = document.createTextNode(cameraProduct.name);
-            var productPrice = document.createTextNode(cameraProduct.price);
+            var productPrice = document.createTextNode(cameraProduct.CalculatedPrice);
             var productDescription = document.createTextNode(cameraProduct.description);
             
 
@@ -110,8 +111,8 @@ let cameraProduct = new Camera (itemId.name, itemId.price, itemId.imageUrl, item
                   incrémentation()
                   /**problemes : 
                    * 
-                   * --- LocalStorage montre la bonne quantité incrémentée, mais au refresh, reprend la valeur 1 (valeur de base)
-                   * --- La donnée de tab est delete quand on ajoute une incrémentation
+                   * Ecrase l'objet précèdant quand on ajoute un objet
+                   * quantité reset au refresh/chgmt de page
                    * 
                   */
                   tab.push(cameraBasket)
@@ -132,4 +133,3 @@ let cameraProduct = new Camera (itemId.name, itemId.price, itemId.imageUrl, item
    }) 
    
    console.log(localStorage)
-

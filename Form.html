@@ -11,29 +11,7 @@
 </head>
 <body class="background white">
 
-    <!-- 
-    * Expects request to contain:
- * contact: {
- *   firstName: string,
- *   lastName: string,
- *   address: string,
- *   city: string,
- *   email: string
- * }
- * products: [string] <-- array of product _id
--->
-
-    <!-- if (!req.body.contact ||
-      !req.body.contact.firstName ||
-      !req.body.contact.lastName ||
-      !req.body.contact.address ||
-      !req.body.contact.city ||
-      !req.body.contact.email ||
-      !req.body.products) {
-    return res.status(400).send(new Error('Bad request!'));
-  }-->
-
-  <!--expiration date qui marche : ^(0[0-9]|1[0-9])\/(0[0-9]|1[0-9]|2[0-9]|3[0-1])\/(201[0-9]|202[0-9]|203[0-9])$ -->
+        <!-----------------------HTML FORM-------------------------->
 
 <h2 class="formTitle">To finalize your order, please fill out this form</h2>
 
@@ -51,26 +29,32 @@
         <input type="text" name="city" id="city" class="form__input" minlength="2" maxlength="20" pattern="^[^0-9]+$" placeholder="Manchester" required>
 
         <label for="zip" class="form__label">ZIP code</label>
-        <input type="text" name="zip" id="zip" class="form__input" minlength="2" maxlength="20" pattern="^[^0-9]+$" placeholder="SW1A 2AA" required>
+        <input type="text" name="zip" id="zip" class="form__input" minlength="2" maxlength="20" placeholder="SW1A 2AA" required>
 
         <label for="email" class="form__label">Email address</label>
         <input type="email" name="email" id="email" class="form__input" placeholder="example@your_email.com" required>
 
-        <div class="creditCard">
+        <label for="phone" class="form__label">Phone number</label>
+        <input type="text" name="phone" id="phone" class="form__input" placeholder="06 15 59 87 50" required>     
 
+            <!----------------PAIMENT INFORMATIONS------------------------->
+
+        <div class="creditCard">
             <i class="fas fa-credit-card creditCard__icon" id="cardIcon"></i>
             
             <div class="creditCard__info">
                 <label for="card" class="creditCard__label">Credit Card</label>
-                <input type="text" name="email" id="card" class="creditCard__input" id="card" placeholder="xxxx/xxxx/xxxx/xxxx" pattern="^[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9]\s[0-9]+?$" required>
+                <input type="text" name="email" id="card" class="creditCard__input" id="card" placeholder="xxxx xxxx xxxx xxxx" pattern="^[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9]\s[0-9]+?$" >
     
-                <label for="expiration" class="creditCard__label">Expiration date</label>
-                <input type="text" name="expiration" id="expiration" placeholder="aa/aa/aaaa"  class="creditCard__input" pattern="^(0[0-9]|1[0-9])\/(0[0-9]|1[0-9]|2[0-9]|3[0-1])\/(201[0-9]|202[0-9]|203[0-9])$" required>
+                <label for="products" class="creditCard__label">Expiration date</label>
+                <input type="text" name="products" id="products" placeholder="mm/dd/yyyy"  class="creditCard__input" pattern="^(0[0-9]|1[0-9])\/(0[0-9]|1[0-9]|2[0-9]|3[0-1])\/(201[0-9]|202[0-9]|203[0-9])$" required>
             </div>
         </div>
 
+            <!-------------SUBMIT FORM BUTTON--------------->
+
         <div class="buttonWrap form__Button">
-            <button class="buttonWrap__button bold">Finalize your order  <i class="fas fa-cart-plus"></i></button>
+            <button class="buttonWrap__button bold" type="submit">Finalize your order  <i class="fas fa-cart-plus"></i></button>
             <span class="buttonWrap__animation"></span>
         </div>
     </form>

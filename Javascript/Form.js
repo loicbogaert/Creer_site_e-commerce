@@ -5,20 +5,16 @@ function results() {
     var city = document.getElementById("city").value;
     var email = document.getElementById("email").value;
     var card = document.getElementById("card").value;
-    var expiration = document.getElementById("expiration").value;
 
     alert("Your order has been registered, Thank you for your purchase !")
     
 }
 
-/** ajouter informations paiement + regex + regex avec picto selon les 4 premiers chiffres */
-/**(visa ou mastercard ?) */
+/** visa ou mastercard (regex)  */
     var iconChange = document.getElementById("cardIcon");
     
-    var regexVisa = /^[0-4][0-9][0-9][0-9]\s/;
-    var regexMaster = /^[5-9][0-9][0-9][0-9]\s/;
-
-
+    var regexVisa = /^[0-4][0-9][0-9][0-9]/;
+    var regexMaster = /^[5-9][0-9][0-9][0-9]/;
 
 /*------fonction qui vérifie le type de carte utilisée pour le paiement----------- */
 
@@ -51,3 +47,65 @@ function results() {
             iconChange.classList.add("fa-credit-card")
         }
     }
+
+    /** envoyer les résultats du form avec fetch */
+
+    var basket__json = localStorage.getItem("basket")
+    var basket = JSON.parse(basket__json);
+
+
+    const form = document.getElementById('form');
+
+    form.addEventListener('submit' , function (e) {
+        e.preventDefault();
+
+        const contact = new Object();
+        contact.firstName = "agh",
+        contact.lastName ="azed",
+        contact.address ="azed",
+        contact.city ="zaedf",
+        contact.email ="azef",
+        console.log(contact)
+
+        const products = new Array
+
+        for (var i = 0; i < basket.length; i++) {
+            products.push(basket[i].id)
+        }
+        console.log(products)
+
+        fetch("http://localhost:3000/api/cameras/order", {
+            method: "POST",
+            body: [contact,
+            products]
+    }).then(function (response) {
+        return response.text(); 
+    }).then(function (text) {
+        console.log(text);
+    })
+})
+
+/**<!-- if (!req.body.contact ||
+      !req.body.contact.firstName ||
+      !req.body.contact.lastName ||
+      !req.body.contact.address ||
+      !req.body.contact.city ||
+      !req.body.contact.email ||
+      !req.body.products) {
+    return res.status(400).send(new Error('Bad request!'));
+  }--> */
+
+
+  /**
+ *
+ * Expects request to contain:
+ * contact: {
+ *   firstName: string,
+ *   lastName: string,
+ *   address: string,
+ *   city: string,
+ *   email: string
+ * }
+ * products: [string] <-- array of product _id
+ *
+ */

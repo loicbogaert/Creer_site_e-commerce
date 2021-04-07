@@ -63,6 +63,16 @@ $blue : rgb(39, 165, 187);
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 1);
 }
 
+/*boutons du panier*/
+
+.incrementButton {
+    color: $blue;
+    width: 55px;
+    height: 55px;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
 
 /*animations*/
 
