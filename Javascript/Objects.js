@@ -1,12 +1,6 @@
        /**Classe d'objet de chaque caméra */
 
        class Camera  {
-             name;
-             price;
-             image;
-             description;
-             id;
-             quantity;
         constructor (name, price, image, description, id, quantity) {
               this.name = name;
               this.price = price;

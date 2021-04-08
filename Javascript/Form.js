@@ -67,6 +67,13 @@ function results() {
         contact.email ="azef",
         console.log(contact)
 
+        /**
+         * const contact : {
+         *  * les differents parties de l'objet*
+         * }
+         * 
+         */
+
         const products = new Array
 
         for (var i = 0; i < basket.length; i++) {
@@ -84,6 +91,11 @@ function results() {
         console.log(text);
     })
 })
+
+/** faire un stringify sur le body pour corriger l'erreur
+ * 
+ * + faire un header
+*/
 
 /**<!-- if (!req.body.contact ||
       !req.body.contact.firstName ||
@@ -109,3 +121,23 @@ function results() {
  * products: [string] <-- array of product _id
  *
  */
+
+  /**   EXEMPLE POUR LA REQUETE POST *****
+   * 
+   * fetch("http://example.com/api/endpoint/", {
+  method: "post",
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+
+  //make sure to serialize your JSON body
+  body: JSON.stringify({
+    name: myName,
+    password: myPassword
+  })
+})
+.then( (response) => { 
+   //do something awesome that makes the world a better place
+});
+   */

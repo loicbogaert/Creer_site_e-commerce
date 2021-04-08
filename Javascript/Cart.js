@@ -83,15 +83,24 @@ for (var i = 0; i < basket.length; i++) {
 
 
     /** Boutons d'ajout et retrait de la quantité pour un même objet
-     * faire une fonction
-     * ajouter / retirer sur localStorage
     */
-    document.getElementById("buttonPlus"+[i]).addEventListener("click", event => {
-    });
-    document.getElementById("buttonMinus"+[i]).addEventListener("click", event => {
-    });
+
+    document.getElementById("buttonPlus"+[i]).onclick = function() {
+        this.parentNode.parentNode.children[5].innerHTML++
+    }
+    
+    document.getElementById("buttonMinus"+[i]).onclick = function() {
+      this.parentNode.parentNode.children[5].innerHTML--
+    }
+
     }
 }
+/** 
+ * 
+ * fonction onclick sur les boutons et pas addevent listener
+ * 
+ * 
+ */
 
 createElements();
 

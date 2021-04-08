@@ -85,9 +85,9 @@ console.log(cameraProduct)
 
     itemId.then(itemId=>{
       let cameraBasket = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1)
-                /**Bouton pour ajouter au panier (localStorage) */
-                var cartButton = document.getElementById("cartButton");
-                cartButton.onclick = function(){
+         /**Bouton pour ajouter au panier (localStorage) */
+         var cartButton = document.getElementById("cartButton");
+         cartButton.onclick = function(){
 
             let data = JSON.parse(localStorage.getItem("basket"))
 
@@ -98,14 +98,17 @@ console.log(cameraProduct)
                } else {
                   return false;
                }
-                  }
+            }
             
             function incrémentation (){
               cameraBasket.quantity ++
                console.log(cameraBasket.quantity);
             }       
+            
+/**retirer les fonctions et les mettres directement apres if data */
+   
             var tab = new Array;
-
+/** */
             if (data) { 
                if(contains()){
                   incrémentation()
