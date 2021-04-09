@@ -23,6 +23,8 @@
 
 .logo1 {
   text-align: center;
+  margin-bottom: 0px;
+  margin-top: 5px;
 }
 
 /*txt carousel*/
@@ -89,27 +91,45 @@
 }
 /*header*/
 /*navbars*/
-.navbar1__links {
+.navbar1 {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+}
+.navbar1__links {
   text-shadow: 1.5px 1.5px 0px #27a5bb;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .navbar1__txt {
   margin-right: 12px;
   color: black !important;
   text-decoration: none;
   font-size: 19px;
+  vertical-align: middle;
+  text-align: center;
 }
 .navbar1__txt a {
   color: black;
   display: block;
   height: 30px;
+  width: 150px;
 }
 .navbar1__txt a:hover {
   color: #27a5bb;
   text-shadow: 1.5px 1.5px 0px black;
   transform: translate(8px, -5px) scale(1.2);
   transition-duration: 0.5s;
+}
+
+#account {
+  margin-bottom: 0px;
+}
+
+#cart {
+  margin-bottom: 0px;
 }
 
 .navLinks {
@@ -433,6 +453,8 @@ img {
 
 .logo1 {
   text-align: center;
+  margin-bottom: 0px;
+  margin-top: 5px;
 }
 
 /*txt carousel*/
@@ -575,6 +597,8 @@ img {
 
 .logo1 {
   text-align: center;
+  margin-bottom: 0px;
+  margin-top: 5px;
 }
 
 /*txt carousel*/

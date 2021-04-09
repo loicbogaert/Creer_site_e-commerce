@@ -35,9 +35,9 @@ for (var i = 0; i < basket.length; i++) {
     var ButtonPlus = document.createElement("button");
     var ButtonMinus = document.createElement("button");
 
-    var ButtonContainer = document.createElement("div");
-    ButtonContainer.appendChild(ButtonPlus);    
+    var ButtonContainer = document.createElement("div"); 
     ButtonContainer.appendChild(ButtonMinus);
+    ButtonContainer.appendChild(ButtonPlus);   
       /**Création de classes + bootstrap*/
       eachProduct.classList.add("cartPage");
       eachProductPrice.classList.add("cartPage__price");

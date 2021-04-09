@@ -5,21 +5,29 @@
 /*navbars*/
 
 .navbar1 {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
     &__links {
-        display: flex;
-        justify-content: center;
         text-shadow: 1.5px 1.5px 0px rgb(39, 165, 187);
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
         &__txt {
             margin-right: 12px;
             color: black !important;
             text-decoration: none;
             font-size: 19px;
+            vertical-align: middle;
+            text-align: center;
         }
             &__txt a {
                 color: black;
                 display: block;
                 height: 30px;
+                width: 150px;
                     &:hover {
                         color: $blue;
                         text-shadow: 1.5px 1.5px 0px rgb(0, 0, 0);
@@ -28,6 +36,15 @@
                     }
             }
 }
+
+#account {
+    margin-bottom: 0px;
+}
+
+#cart {
+    margin-bottom: 0px;
+}
+
 
 .navLinks {
     display: flex;
