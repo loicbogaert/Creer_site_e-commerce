@@ -92,47 +92,36 @@ console.log(cameraProduct)
             let data = JSON.parse(localStorage.getItem("basket"))
 
             /** if id déjà présent, faire une incrémentation sur la quantité*/
-            function contains () {
-               if(data.some(data => data.name === cameraBasket.name)){
-                  return true;
-               } else {
-                  return false;
-               }
-            }
-            
-            function incrémentation (){
-              cameraBasket.quantity ++
-               console.log(cameraBasket.quantity);
-            }       
-            
-/**retirer les fonctions et les mettres directement apres if data */
+     
    
             var tab = new Array;
 /** */
             if (data) { 
-               if(contains()){
-                  incrémentation()
+               if(data.some(data => data.name === cameraBasket.name)){
+                  cameraBasket.quantity ++
+                  console.log(cameraBasket.quantity);
+
+                 tab.push(cameraBasket) /** ce tab.push delete tout le reste du panier */
+                  console.log(localStorage)
+               }
                   /**problemes : 
                    * 
                    * Ecrase l'objet précèdant quand on ajoute un objet
                    * quantité reset au refresh/chgmt de page
                    * 
                   */
-                  tab.push(cameraBasket)
-                  localStorage.setItem("basket", JSON.stringify(tab))
-                  console.log(localStorage)
-               }
+               
                else {
                   data.push (cameraBasket)
                   localStorage.setItem("basket", JSON.stringify(data))
                   console.log(localStorage)
                }
             } else {
-                  tab.push(cameraBasket)
-                  localStorage.setItem("basket", JSON.stringify(tab))
+                  data.push(cameraBasket)
+                  localStorage.setItem("basket", JSON.stringify(data))
                   console.log(localStorage)
             }
-     }
+         }
    }) 
    
    console.log(localStorage)

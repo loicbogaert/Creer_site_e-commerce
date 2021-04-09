@@ -1,15 +1,3 @@
-function results() {
-    var firstname = document.getElementById("firstName").value;
-    var lastname = document.getElementById("lastName").value;
-    var address = document.getElementById("address").value;
-    var city = document.getElementById("city").value;
-    var email = document.getElementById("email").value;
-    var card = document.getElementById("card").value;
-
-    alert("Your order has been registered, Thank you for your purchase !")
-    
-}
-
 /** visa ou mastercard (regex)  */
     var iconChange = document.getElementById("cardIcon");
     
@@ -59,19 +47,24 @@ function results() {
     form.addEventListener('submit' , function (e) {
         e.preventDefault();
 
+        var firstname = document.getElementById("firstName").value;
+        var lastname = document.getElementById("lastName").value;
+        var address = document.getElementById("address").value;
+        var city = document.getElementById("city").value;
+        var email = document.getElementById("email").value;
+        var card = document.getElementById("card").value;
+    
+        alert("Your order has been registered, Thank you for your purchase !")
+
         const contact = new Object();
-        contact.firstName = "agh",
-        contact.lastName ="azed",
-        contact.address ="azed",
-        contact.city ="zaedf",
-        contact.email ="azef",
-        console.log(contact)
+        contact.firstName = firstname,
+        contact.lastName = lastname,
+        contact.address = address,
+        contact.city = city,
+        contact.email = email;
 
         /**
-         * const contact : {
-         *  * les differents parties de l'objet*
-         * }
-         * 
+         * --------------requête POST---------------
          */
 
         const products = new Array
@@ -79,23 +72,21 @@ function results() {
         for (var i = 0; i < basket.length; i++) {
             products.push(basket[i].id)
         }
-        console.log(products)
 
         fetch("http://localhost:3000/api/cameras/order", {
             method: "POST",
-            body: [contact,
-            products]
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+            body: JSON.stringify({contact,
+            products})
     }).then(function (response) {
         return response.text(); 
     }).then(function (text) {
         console.log(text);
     })
 })
-
-/** faire un stringify sur le body pour corriger l'erreur
- * 
- * + faire un header
-*/
 
 /**<!-- if (!req.body.contact ||
       !req.body.contact.firstName ||
