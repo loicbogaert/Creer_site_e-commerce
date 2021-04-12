@@ -14,6 +14,7 @@ console.log(cameraProduct)
         var image = document.createElement("img");
         var description  = document.createElement("p");
         var lenses = document.createElement("div");
+        var cartButton = document.getElementById("cartButton");
 
 
         /**texte choix de lentille */
@@ -65,8 +66,9 @@ console.log(cameraProduct)
 
            buttonLense.value = lense[i];
 
-           buttonLense.addEventListener('input', function(event){
-              var clientInput = event.target.value;
+           cartButton.addEventListener('click', function(){
+              var clientInput = buttonLense.value;
+              console.log(clientInput)
            })
          choiceContainer.appendChild(buttonLense)
          buttonLense.appendChild(option)
