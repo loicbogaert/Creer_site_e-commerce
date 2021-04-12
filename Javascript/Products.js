@@ -65,14 +65,13 @@ console.log(cameraProduct)
            /** écoute du choix de lentille */
 
            buttonLense.value = lense[i];
-
+           choiceContainer.appendChild(buttonLense)
+           buttonLense.appendChild(option)
+        }
            cartButton.addEventListener('click', function(){
               var clientInput = buttonLense.value;
               console.log(clientInput)
            })
-         choiceContainer.appendChild(buttonLense)
-         buttonLense.appendChild(option)
-   }
         /**Création de classes */
 
         page.classList.add("productPage");

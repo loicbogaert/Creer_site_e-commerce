@@ -86,11 +86,16 @@ for (var i = 0; i < basket.length; i++) {
     */
 
     document.getElementById("buttonPlus"+[i]).onclick = function() {
-        this.parentNode.parentNode.children[5].innerHTML++
+            this.parentNode.parentNode.children[5].innerHTML++
+        
     }
     
     document.getElementById("buttonMinus"+[i]).onclick = function() {
-      this.parentNode.parentNode.children[5].innerHTML--
+        if(this.parentNode.parentNode.children[5].innerHTML > 0) {
+            this.parentNode.parentNode.children[5].innerHTML--
+        } else {
+            this.parentNode.parentNode.remove();
+        }
     }
 
     }
@@ -114,7 +119,7 @@ function getTotalPrice() {
     var totalPrice = 0;
 
     for (var i = 0; i < basket.length; i++) {
-        totalPrice += parseInt(basket[i].price/100);
+        totalPrice += parseInt(basket[i].price/100*basket[i].quantity);
      }
 
      var FinalPrice = document.createTextNode(totalPrice + " $");
