@@ -87,25 +87,25 @@ for (var i = 0; i < basket.length; i++) {
 
     document.getElementById("buttonPlus"+[i]).onclick = function() {
             this.parentNode.parentNode.children[5].innerHTML++
+            
+getTotalPrice();
         
     }
     
     document.getElementById("buttonMinus"+[i]).onclick = function() {
         if(this.parentNode.parentNode.children[5].innerHTML > 0) {
             this.parentNode.parentNode.children[5].innerHTML--
+            
+getTotalPrice();
         } else {
-            this.parentNode.parentNode.remove();
+            this.parentNode.parentNode.remove();   
+            
+getTotalPrice();
         }
     }
 
     }
 }
-/** 
- * 
- * fonction onclick sur les boutons et pas addevent listener
- * 
- * 
- */
 
 createElements();
 
@@ -116,16 +116,17 @@ function getTotalPrice() {
     var docPrice = document.getElementById("totalPrice");
     docPrice.classList.add("totalPrice");
 
+
     var totalPrice = 0;
 
     for (var i = 0; i < basket.length; i++) {
-        totalPrice += parseInt(basket[i].price/100*basket[i].quantity);
+        var changingQuantity = document.getElementById("quantity"+[i])
+        totalPrice += parseInt(basket[i].price/100*changingQuantity.innerHTML);
      }
-
-     var FinalPrice = document.createTextNode(totalPrice + " $");
-     docPrice.appendChild(FinalPrice);
+     var FinalPrice = totalPrice + " $";
+     console.log(FinalPrice)
+        docPrice.innerHTML = FinalPrice;
 }
 
 getTotalPrice();
-
 

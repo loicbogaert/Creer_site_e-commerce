@@ -87,42 +87,37 @@ console.log(cameraProduct)
     itemId.then(itemId=>{
       let cameraBasket = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1)
          /**Bouton pour ajouter au panier (localStorage) */
+         var tab = new Array
+
          var cartButton = document.getElementById("cartButton");
          cartButton.onclick = function(){
-
             let data = JSON.parse(localStorage.getItem("basket"))
-
-            /** if id déjà présent, faire une incrémentation sur la quantité*/
-     
-   
-            var tab = new Array;
-/** */
             if (data) { 
                if(data.some(data => data.name === cameraBasket.name)){
                   cameraBasket.quantity ++
-                  console.log(cameraBasket.quantity);
-
-                 tab.push(cameraBasket) /** ce tab.push delete tout le reste du panier */
+                 localStorage.setItem("basket", JSON.stringify(tab))
                   console.log(localStorage)
+                  console.log(cameraBasket.quantity);
                }
                   /**problemes : 
                    * 
-                   * Ecrase l'objet précèdant quand on ajoute un objet
-                   * quantité reset au refresh/chgmt de page
+                   * tableau ne se sauvegarde pas et donc au refresh on a un tableau vide
+                   * 
                    * 
                   */
                
                else {
-                  data.push (cameraBasket)
+                  data.push(cameraBasket)
                   localStorage.setItem("basket", JSON.stringify(data))
                   console.log(localStorage)
                }
             } else {
-                  data.push(cameraBasket)
-                  localStorage.setItem("basket", JSON.stringify(data))
+                   tab.push(cameraBasket)
+                  localStorage.setItem("basket", JSON.stringify(tab))
                   console.log(localStorage)
             }
          }
    }) 
    
    console.log(localStorage)
+   localStorage.clear()
