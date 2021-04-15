@@ -82,25 +82,20 @@ for (var i = 0; i < basket.length; i++) {
     eachProductImage.src = basketImg;
 
 
-    /** Boutons d'ajout et retrait de la quantité pour un même objet
-    */
+    /**-----------Boutons d'ajout et retrait de la quantité pour un même objet-----------*/
 
     document.getElementById("buttonPlus"+[i]).onclick = function() {
-            this.parentNode.parentNode.children[5].innerHTML++
-            
-getTotalPrice();
-        
+        this.parentNode.parentNode.children[5].innerHTML++     
+        getTotalPrice();
     }
     
     document.getElementById("buttonMinus"+[i]).onclick = function() {
         if(this.parentNode.parentNode.children[5].innerHTML > 0) {
-            this.parentNode.parentNode.children[5].innerHTML--
-            
-getTotalPrice();
+            this.parentNode.parentNode.children[5].innerHTML-- 
+            getTotalPrice();
         } else {
-            this.parentNode.parentNode.remove();   
-            
-getTotalPrice();
+            this.parentNode.parentNode.remove();     
+            getTotalPrice();
         }
     }
 
@@ -109,7 +104,7 @@ getTotalPrice();
 
 createElements();
 
-/**-----------------Fonction pour avoir le prix total du panier------ */
+/**-----------------Fonction pour avoir le prix total du panier----------------------- */
 
 function getTotalPrice() {
 

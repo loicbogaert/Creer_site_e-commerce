@@ -87,37 +87,37 @@ console.log(cameraProduct)
     itemId.then(itemId=>{
       let cameraBasket = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1)
          /**Bouton pour ajouter au panier (localStorage) */
-         var tab = new Array
-
          var cartButton = document.getElementById("cartButton");
          cartButton.onclick = function(){
             let data = JSON.parse(localStorage.getItem("basket"))
             if (data) { 
+               /**rename data ---------------------------------------------- */
                if(data.some(data => data.name === cameraBasket.name)){
-                  cameraBasket.quantity ++
-                 localStorage.setItem("basket", JSON.stringify(tab))
-                  console.log(localStorage)
-                  console.log(cameraBasket.quantity);
-               }
-                  /**problemes : 
-                   * 
-                   * tableau ne se sauvegarde pas et donc au refresh on a un tableau vide
-                   * 
-                   * 
+                  /** boucle for data
+                   * un if pour vérifier l'ID
+                   * Si c'est le même : pour data[i].quantity ++
+                   * A la fin de la boucle faire un set item de basket avec data
                   */
-               
-               else {
+                  for(var i = 0; data.length > i; i++) {
+                     if (data[i].id === cameraBasket.id) {
+                        data[i].quantity ++
+                        console.log(data[i].quantity)
+                        localStorage.setItem("basket", JSON.stringify(data))
+                        console.log(localStorage)
+                     }
+                  }
+               }  else {
                   data.push(cameraBasket)
                   localStorage.setItem("basket", JSON.stringify(data))
                   console.log(localStorage)
                }
             } else {
-                   tab.push(cameraBasket)
-                  localStorage.setItem("basket", JSON.stringify(tab))
+                  data = new Array;
+                   data.push(cameraBasket)
+                  localStorage.setItem("basket", JSON.stringify(data))
                   console.log(localStorage)
             }
          }
    }) 
    
    console.log(localStorage)
-   localStorage.clear()
