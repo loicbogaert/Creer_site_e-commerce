@@ -11,10 +11,6 @@
               this.lense = lense;
           }
 
-          get myQuantity() {
-           return 1;
-          }
-
           get CalculatedPrice() {
             return this.price/100 + " $";
           }
