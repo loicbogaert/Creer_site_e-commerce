@@ -1,77 +1,78 @@
+itemId.then(itemId=>{
 
-  itemId.then(itemId=>{
+      /**Création des éléments de la page products */
+      /**Prise des éléments de l'api*/
+      const cameraProduct = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1);
 
-/***/
-const cameraProduct = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1);
-console.log(cameraProduct)
+      /**Div principale de la page produit*/
+      var page = document.getElementById("pageProduct");
 
-        /*Div principale de la page produit*/
-        var page = document.getElementById("pageProduct");
-
-        /**Création des sous-div de la page produit (img / textes) */
-        var title = document.createElement("h2");
-        var price =  document.createElement("p");
-        var image = document.createElement("img");
-        var description  = document.createElement("p");
-        var lenses = document.createElement("div");
-        var cartButton = document.getElementById("cartButton");
+      /**Création des sous-div de la page produit (img / textes) */
+      var title = document.createElement("h2");
+      var price =  document.createElement("p");
+      var image = document.createElement("img");
+      var description  = document.createElement("p");
+      var lenses = document.createElement("div");
+      var cartButton = document.getElementById("cartButton");
 
 
-        /**texte choix de lentille */
-        var lensesChoice =  document.createElement("p");
-        var createChoice =  document.createTextNode("Please choose your lense type :");
-        lensesChoice.appendChild(createChoice);
-       
-        /**Ajout des éléments à la div principale */
-        page.appendChild(title);
-        page.appendChild(image);
-        page.appendChild(description);
-        page.appendChild(price);
-        page.appendChild(lensesChoice);
-        page.appendChild(lenses);
+      /**texte choix de lentille */
+      var lensesChoice =  document.createElement("p");
+      var createChoice =  document.createTextNode("Please choose your lense type :");
+      lensesChoice.appendChild(createChoice);
+
+      /**Ajout des éléments à la div principale */
+      page.appendChild(title);
+      page.appendChild(image);
+      page.appendChild(description);
+      page.appendChild(price);
+      page.appendChild(lensesChoice);
+      page.appendChild(lenses);
 
         /** faire correspondre item ($get) avec les données du tableau */
 
-            var productName = document.createTextNode(cameraProduct.name);
-            var productPrice = document.createTextNode(cameraProduct.CalculatedPrice);
-            var productDescription = document.createTextNode(cameraProduct.description);
+      var productName = document.createTextNode(cameraProduct.name);
+      var productPrice = document.createTextNode(cameraProduct.CalculatedPrice);
+      var productDescription = document.createTextNode(cameraProduct.description);
             
 
-        /**Ajout des textes/images créés à leur div respective */
+      /**Ajout des textes/images créés à leur div respective */
 
-                title.appendChild(productName);
-                price.appendChild(productPrice);
-                description.appendChild(productDescription);
-                image.src = cameraProduct.image;
-
-
-        /**Ajout des différentes options de lentille */
-
-        var lense = itemId.lenses;
-        var buttonLense = document.createElement("select");
-        buttonLense.setAttribute("name", "lense");
-        buttonLense.classList.add("productPage__checkbox");
-        var choiceContainer = document.createElement("div");
-        page.appendChild(choiceContainer);
+      title.appendChild(productName);
+      price.appendChild(productPrice);
+      description.appendChild(productDescription);
+      image.src = cameraProduct.image;
 
 
-        for (let i = 0; i < lense.length; i++) {
-            var option = document.createElement("option");
-            option.setAttribute("value", lense[i])
-            var optionTextnode = document.createTextNode(lense[i]);
+      /**Ajout des différentes options de lentille */
 
-            option.appendChild(optionTextnode);
+      var lense = itemId.lenses;
+      var buttonLense = document.createElement("select");
+      buttonLense.setAttribute("name", "lense");
+      buttonLense.classList.add("productPage__checkbox");
+      var choiceContainer = document.createElement("div");
+      page.appendChild(choiceContainer);
 
-           /** écoute du choix de lentille */
 
-           buttonLense.value = lense[i];
-           choiceContainer.appendChild(buttonLense)
-           buttonLense.appendChild(option)
-        }
-           cartButton.addEventListener('click', function(){
-              var clientInput = buttonLense.value;
-              console.log(clientInput)
-           })
+      for (let i = 0; i < lense.length; i++) {
+         var option = document.createElement("option");
+         option.setAttribute("value", lense[i]);
+         var optionTextnode = document.createTextNode(lense[i]);
+
+         option.appendChild(optionTextnode);
+
+         /** écoute du choix de lentille */
+
+         buttonLense.value = lense[i];
+         choiceContainer.appendChild(buttonLense);
+         buttonLense.appendChild(option);
+      }
+
+      cartButton.addEventListener('click', function(){
+         var clientInput = buttonLense.value;
+         console.log(clientInput);
+      })
+
         /**Création de classes */
 
         page.classList.add("productPage");
@@ -80,51 +81,34 @@ console.log(cameraProduct)
         price.classList.add("productPage__price", "bold");
         description.classList.add("productPage__description");
         lensesChoice.classList.add("productPage__lenseType");
+})
 
-    })
-
-/**Fonction pour incrémenter de la quantité dans le local storage */
-
-    function AddItem(myData, allData) {
-      myData.quantity ++
-      console.log(myData.quantity)
-      localStorage.setItem("basket", JSON.stringify(allData))
-      console.log(localStorage)
-    }
-
-/**Fonction pour retirer de la quantité dans le local storage */
-    function DeleteItem(myData, allData) {
-      myData.quantity -
-      console.log(myData.quantity)
-      localStorage.setItem("basket", JSON.stringify(allData))
-      console.log(localStorage)
-    }
-
-
-    itemId.then(itemId=>{
+   itemId.then(itemId=>{
       let cameraBasket = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1)
+
          /**Bouton pour ajouter au panier (localStorage) */
          var cartButton = document.getElementById("cartButton");
-         cartButton.onclick = function(){
-            let data = JSON.parse(localStorage.getItem("basket"))
-            if (data) { 
-               /**rename data ---------------------------------------------- */
-               if(data.some(data => data.name === cameraBasket.name)){
 
-                  for(var i = 0; data.length > i; i++) {
-                     if (data[i].id === cameraBasket.id) {
-                       AddItem(data[i], data);
+         cartButton.onclick = function(){
+            let items = JSON.parse(localStorage.getItem("basket"))
+
+            if (items) { 
+               if(items.some(items => items.name === cameraBasket.name)){
+
+                  for(var i = 0; items.length > i; i++) {
+                     if (items[i].id === cameraBasket.id) {
+                       AddItem(items[i], items);
                      }
                   }
                }  else {
-                  data.push(cameraBasket)
-                  localStorage.setItem("basket", JSON.stringify(data))
+                  items.push(cameraBasket)
+                  localStorage.setItem("basket", JSON.stringify(items))
                   console.log(localStorage)
                }
             } else {
-                  data = new Array;
-                   data.push(cameraBasket)
-                  localStorage.setItem("basket", JSON.stringify(data))
+                  items = new Array;
+                   items.push(cameraBasket)
+                  localStorage.setItem("basket", JSON.stringify(items))
                   console.log(localStorage)
             }
          }

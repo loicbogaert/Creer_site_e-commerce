@@ -2,12 +2,9 @@
      product.then(product=>{
 
 
-/**Fonction de création des éléments de la page Home */
-function addElements (){
-
-    console.log(cameraArray);
+/**Création des éléments de la page Home */
     for (let i = 0; i < product.length; i++) {
-        let camera = new Camera(product[i].name, product[i].price, product[i].imageUrl, product[i].description, product[i]._id);
+        const camera = new Camera(product[i].name, product[i].price, product[i].imageUrl, product[i].description, product[i]._id);
 
         
         /*Création des différentes div (1 div = un produit) + ajout classe / id*/
@@ -17,6 +14,7 @@ function addElements (){
         divSquare.id = 'mainSquare' + [i];
     
         /*création des éléments + noms de classe*/
+
         var divImg = document.createElement("div");
         divImg.classList.add("main__img");
         var div = document.createElement("h2");
@@ -27,8 +25,6 @@ function addElements (){
         div3.classList.add ("main__description");
         var div4 = document.createElement("p");
         div4.classList.add ("main__code");
-
-
                 
         /*Ajout des classes bootstrap*/
 
@@ -36,33 +32,31 @@ function addElements (){
         divSquare.classList.add("col-md-5");
         divSquare.classList.add("col-lg-3");
 
-                /*Création des éléments de texte et img*/
+        /*Création des éléments de texte et img*/
     
-                var id = document.createTextNode ("product reference : " + camera.id);
-                var name = document.createTextNode(camera.name);
-                var price = document.createTextNode(camera.CalculatedPrice);
-                var description = document.createTextNode(camera.description);    
+        var id = document.createTextNode ("product reference : " + camera.id);
+        var name = document.createTextNode(camera.name);
+        var price = document.createTextNode(camera.CalculatedPrice);
+        var description = document.createTextNode(camera.description);    
        
-                var image = document.createElement("img");
-                image.src = camera.image;
+        var image = document.createElement("img");
+        image.src = camera.image;
        
-               /*Ajout de tout les éléments "product" aux sous-div du MAIN*/ 
+        /*Ajout de tout les éléments "product" aux sous-div du MAIN*/ 
        
-                document.getElementById('main').appendChild(divSquare);
+        document.getElementById('main').appendChild(divSquare);
        
-                document.getElementById('mainSquare' + [i]).appendChild(divImg);
-                divImg.appendChild(image);
-                document.getElementById('mainSquare' + [i]).appendChild(div);
-                div.appendChild(name);
-                document.getElementById('mainSquare' + [i]).appendChild(div2);
-                div2.appendChild(price);
-                document.getElementById('mainSquare' + [i]).appendChild(div3);
-                div3.appendChild(description);
-                document.getElementById('mainSquare' + [i]).appendChild(div4);
-                div4.appendChild(id); 
+        document.getElementById('mainSquare' + [i]).appendChild(divImg);
+        divImg.appendChild(image);
+        document.getElementById('mainSquare' + [i]).appendChild(div);
+        div.appendChild(name);
+        document.getElementById('mainSquare' + [i]).appendChild(div2);
+        div2.appendChild(price);
+        document.getElementById('mainSquare' + [i]).appendChild(div3);
+        div3.appendChild(description);
+        document.getElementById('mainSquare' + [i]).appendChild(div4);
+        div4.appendChild(id); 
 }
-}
-addElements();
 
 
 
@@ -87,9 +81,6 @@ function urlWithId() {
 }
 urlWithId();
     
-
-
-function Carrousel() {
     
         /**Boucle pour afficher dynamiquement le carousel*/
 
@@ -110,8 +101,5 @@ function Carrousel() {
         carouTxt[i].appendChild(description);
         carouTitle[i].appendChild(title);
     }
-}
-
-Carrousel();
-
 })
+

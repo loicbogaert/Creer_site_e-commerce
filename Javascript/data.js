@@ -28,7 +28,7 @@ function $_GET(param) {
     product.then(product=>{
     })
 
-        /**Prise des parametres URL pour "itemId"" (page product)*/
+        /**Prise des parametres URL pour "itemId" (page product)*/
     
         var theId = ($_GET("itemId"));
 

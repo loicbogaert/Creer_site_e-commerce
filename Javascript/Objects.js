@@ -11,23 +11,8 @@
               this.lense = lense;
           }
 
+          /**Calcul du prix en $ */
           get CalculatedPrice() {
             return this.price/100 + " $";
           }
       };
-
-      var cameraArray = new Array;
-
-/**array avec les objets pour la page Home*/
-
-      product.then(product=>{
-
-      function camera() {
-        for (let i = 0; i < product.length; i++) {
-            let camera = new Camera(product[i].name, product[i].price, product[i].imageUrl, product[i].description, product[i]._id);
-            cameraArray.push(camera);
-      }
-    }
-
-    camera();
-    })

@@ -1,4 +1,3 @@
-
 /**Création des éléments contenants de la page */
 
 var cartBody = document.getElementById("carts");
@@ -85,24 +84,6 @@ for (var i = 0; i < basket.length; i++) {
 
     /**-----------Boutons d'ajout et retrait de la quantité pour un même objet-----------*/
 
-    /**Prise des data local storage */
-
-     let data = JSON.parse(localStorage.getItem("basket"))
-
-/**Fonction pour incrémenter de la quantité dans le local storage */
-
-     function AddItem(myData, allData) {
-        myData.quantity ++
-        localStorage.setItem("basket", JSON.stringify(allData))
-      }
-
-/**Fonction pour retirer de la quantité dans le local storage */
-
-      function DeleteItem(myData, allData) {
-        myData.quantity --
-        localStorage.setItem("basket", JSON.stringify(allData))
-      }
-
       /** boutons d'ajout et retrait de la quantité */
 
       /**Ajout */
@@ -127,7 +108,6 @@ for (var i = 0; i < basket.length; i++) {
                     console.log(data.length)
                 }
             }
-            getTotalPrice();
         } else {
             /** Si le nombre de produit est de 0, il est supprimé du panier */
             for(var i = 0; data.length > i; i++) {
@@ -140,9 +120,6 @@ for (var i = 0; i < basket.length; i++) {
         }
     }
 }
-
-
-
 /**-----------------Fonction pour avoir le prix total du panier----------------------- */
 
 function getTotalPrice() {

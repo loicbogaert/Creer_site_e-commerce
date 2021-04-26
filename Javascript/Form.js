@@ -12,21 +12,21 @@
       const valid1 = regexVisa.test(document.getElementById("card").value);
       const valid2 = regexMaster.test(document.getElementById("card").value);
      
-        if (valid1) {
+        if (valid1) { /**Vérifie si le regex Visa et validé et change les classes en fonction */
             iconChange.classList.remove("fa-credit-card");
             iconChange.classList.remove("fa-cc-mastercard");
             iconChange.classList.remove("fas");
             iconChange.classList.remove("fab");
             iconChange.classList.add("fab");
             iconChange.classList.add("fa-cc-visa");
-        } else if (valid2) {
+        } else if (valid2) { /**Vérifie si le regex MasterCard et validé et change les classes en fonction */
             iconChange.classList.remove("fa-cc-visa");
             iconChange.classList.remove("fa-credit-card");
             iconChange.classList.remove("fas");
             iconChange.classList.remove("fab");
             iconChange.classList.add("fab");
             iconChange.classList.add("fa-cc-mastercard");
-        } else {
+        } else {    /** Si aucun des regex n'est vérifié, reviens aux classes de base */
             iconChange.classList.remove("fa-cc-visa");
             iconChange.classList.remove("fa-cc-mastercard");
             iconChange.classList.remove("fas");
@@ -37,10 +37,6 @@
     }
 
     /** envoyer les résultats du form avec fetch */
-
-    var basket__json = localStorage.getItem("basket")
-    var basket = JSON.parse(basket__json);
-
 
     const form = document.getElementById('form');
 
@@ -64,15 +60,21 @@
         contact.email = email;
         contact.card = card;
 
-        /**
-         * --------------requête POST---------------
-         */
+        /**Création de l'objet products (tableau avec id des produits) */
+
+        var basket__json = localStorage.getItem("basket")
+        var basket = JSON.parse(basket__json);
 
         const products = new Array
 
         for (var i = 0; i < basket.length; i++) {
             products.push(basket[i].id);
         }
+
+
+        /**
+         * --------------requête POST---------------
+         */
 
         fetch("http://localhost:3000/api/cameras/order", {
             method: "POST",
@@ -82,10 +84,10 @@
               },
             body: JSON.stringify({contact,
             products})
-    }).then(function (response) {
-        return response.text(); 
-    }).then(function (text) {
-     var info = JSON.parse(text);
+        }).then(function (response) {
+            return response.text(); 
+        }).then(function (text) {
+            var info = JSON.parse(text);
 
      /**Gestion du pop-in lorsque la commande sera passée (message de remerciement à l'utilisateur) */
 
