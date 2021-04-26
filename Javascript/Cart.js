@@ -13,9 +13,6 @@ var eachProductImage = document.createElement("img");
 var basket__json = localStorage.getItem("basket")
 var basket = JSON.parse(basket__json);
 
-console.log(basket);
-
-function createElements() {
 for (var i = 0; i < basket.length; i++) {
 
     var basketName = basket[i].name;
@@ -23,6 +20,8 @@ for (var i = 0; i < basket.length; i++) {
     var basketImg = basket[i].image;
     var basketId = basket[i].id;
     var quantity = basket[i].quantity;
+
+    /**Création des éléments de la page */
 
     var eachProduct = document.createElement ("div");
     var eachProductPrice = document.createElement("p");
@@ -38,7 +37,9 @@ for (var i = 0; i < basket.length; i++) {
     var ButtonContainer = document.createElement("div"); 
     ButtonContainer.appendChild(ButtonMinus);
     ButtonContainer.appendChild(ButtonPlus);   
+
       /**Création de classes + bootstrap*/
+
       eachProduct.classList.add("cartPage");
       eachProductPrice.classList.add("cartPage__price");
       eachProductName.classList.add("cartPage__name");
@@ -84,25 +85,63 @@ for (var i = 0; i < basket.length; i++) {
 
     /**-----------Boutons d'ajout et retrait de la quantité pour un même objet-----------*/
 
+    /**Prise des data local storage */
+
+     let data = JSON.parse(localStorage.getItem("basket"))
+
+/**Fonction pour incrémenter de la quantité dans le local storage */
+
+     function AddItem(myData, allData) {
+        myData.quantity ++
+        localStorage.setItem("basket", JSON.stringify(allData))
+      }
+
+/**Fonction pour retirer de la quantité dans le local storage */
+
+      function DeleteItem(myData, allData) {
+        myData.quantity --
+        localStorage.setItem("basket", JSON.stringify(allData))
+      }
+
+      /** boutons d'ajout et retrait de la quantité */
+
+      /**Ajout */
+
     document.getElementById("buttonPlus"+[i]).onclick = function() {
-        this.parentNode.parentNode.children[5].innerHTML++     
-        getTotalPrice();
-    }
-    
-    document.getElementById("buttonMinus"+[i]).onclick = function() {
-        if(this.parentNode.parentNode.children[5].innerHTML > 0) {
-            this.parentNode.parentNode.children[5].innerHTML-- 
-            getTotalPrice();
-        } else {
-            this.parentNode.parentNode.remove();     
-            getTotalPrice();
+        for(var i = 0; data.length > i; i++) {
+            if (data[i].id == this.parentNode.parentNode.children[4].innerHTML) {
+                AddItem(data[i], data);
+                document.location.reload();
+            }
         }
     }
+    
+    /**Retrait */
 
+    document.getElementById("buttonMinus"+[i]).onclick = function() {
+        if(this.parentNode.parentNode.children[5].innerHTML > 1) {
+            for(var i = 0; data.length > i; i++) {
+                if (data[i].id == this.parentNode.parentNode.children[4].innerHTML) {
+                    DeleteItem(data[i], data);
+                    document.location.reload();
+                    console.log(data.length)
+                }
+            }
+            getTotalPrice();
+        } else {
+            /** Si le nombre de produit est de 0, il est supprimé du panier */
+            for(var i = 0; data.length > i; i++) {
+                if (data[i].id == this.parentNode.parentNode.children[4].innerHTML) {
+                    data.splice([i],[1]);
+                    localStorage.setItem("basket", JSON.stringify(data));
+                    document.location.reload();
+                }
+            }
+        }
     }
 }
 
-createElements();
+
 
 /**-----------------Fonction pour avoir le prix total du panier----------------------- */
 
@@ -121,7 +160,8 @@ function getTotalPrice() {
      var FinalPrice = totalPrice + " $";
      console.log(FinalPrice)
         docPrice.innerHTML = FinalPrice;
+
+        return FinalPrice;
 }
 
 getTotalPrice();
-

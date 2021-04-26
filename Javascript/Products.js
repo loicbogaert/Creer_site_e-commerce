@@ -83,6 +83,23 @@ console.log(cameraProduct)
 
     })
 
+/**Fonction pour incrémenter de la quantité dans le local storage */
+
+    function AddItem(myData, allData) {
+      myData.quantity ++
+      console.log(myData.quantity)
+      localStorage.setItem("basket", JSON.stringify(allData))
+      console.log(localStorage)
+    }
+
+/**Fonction pour retirer de la quantité dans le local storage */
+    function DeleteItem(myData, allData) {
+      myData.quantity -
+      console.log(myData.quantity)
+      localStorage.setItem("basket", JSON.stringify(allData))
+      console.log(localStorage)
+    }
+
 
     itemId.then(itemId=>{
       let cameraBasket = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1)
@@ -93,17 +110,10 @@ console.log(cameraProduct)
             if (data) { 
                /**rename data ---------------------------------------------- */
                if(data.some(data => data.name === cameraBasket.name)){
-                  /** boucle for data
-                   * un if pour vérifier l'ID
-                   * Si c'est le même : pour data[i].quantity ++
-                   * A la fin de la boucle faire un set item de basket avec data
-                  */
+
                   for(var i = 0; data.length > i; i++) {
                      if (data[i].id === cameraBasket.id) {
-                        data[i].quantity ++
-                        console.log(data[i].quantity)
-                        localStorage.setItem("basket", JSON.stringify(data))
-                        console.log(localStorage)
+                       AddItem(data[i], data);
                      }
                   }
                }  else {

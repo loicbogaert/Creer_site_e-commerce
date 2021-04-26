@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Anton&family=Oi&display=swap" rel="stylesheet">
+    <title>Orinoco : online camera store</title>
+</head>
+<body class="background">
+
+    <!--Header-->
+
+<header>
+    <nav class="navbar navbar1 col-12">
+        <h1 class="col-12 col-sm-8 col-md-8 titre logo1 logo">Orinoco <i class="fas fa-camera-retro"></i></h1>
+
+        <div class="col-6 col-md-2 navbar1__links">
+            <p id="account" class="navbar1__txt bold link"><a href="#" class="link">Account <i class="fas fa-user"></i></a></p>
+        </div>
+
+        <div  class="col-6 col-md-2 navbar1__links">
+            <p id="cart" class="navbar1__txt bold"><a href="Cart.html" class="link">Your Cart <i class="fas fa-cart-plus"></i></a></p>
+        </div>
+    </nav>
+
+
+    <div class="searchbar">
+        <input type="text" class="searchbar__text bold" name="" id="" aria-describedby="helpId" placeholder="Cherchez-vous une référence particulière ?">
+        <button class="searchbar__button" id="search"><i class="fas fa-search"></i></button>
+    </div>  
+
+    <!--Carousel-->
+
+    <div class="carousel">
+        <nav class="navbar2" id="navbar2">
+            <ul class="navbar col-12 bold" id="navbarn2">
+                <li class="navbarList col-3"><a href="index.html">Home</a></li>
+                <li class="navbarList col-3"><a href="#main">New Products</a></li>
+                <li class="navbarList col-3"><a href="#main">All Products</a></li>
+                <li class="navbarList col-3"><a href="#main">For Sale</a></li>
+            </ul>
+        </nav>
+
+        <div id="carouselId" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselId" data-slide-to="1"></li>
+                <li data-target="#carouselId" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+
+                <div class="carousel-item active">
+                    <img class="img-fluid" alt="First slide" id="slideImg1">
+                    <div class="item-title" id="item-title1"><p id="slideTitle1" class="carouTitle"></p>
+                        <div class="item-title__txt" id="item-title1__txt">
+                            <p id="slideTxt1" class="carouTxt">
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="Products.html?itemId=5be1ed3f1c9d44000030b061"><button type="button" id="carousel-button1" class="btn btn-primary item-title__btn">View product</button></a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img class="img-fluid" alt="First slide" id="slideImg2">
+                    <div class="item-title" id="item-title2"><p id="slideTitle2" class="carouTitle"></p>
+                    <div class="item-title__txt" id="item-title2__txt">
+                        <p id="slideTxt2" class="carouTxt">
+                        </p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="Products.html?itemId=5be1ef211c9d44000030b062"><button type="button" id="carousel-button2" class="btn btn-primary item-title__btn">View product</button></a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img class="img-fluid" alt="First slide" id="slideImg3">
+                    <div class="item-title" id="item-title3"><p id="slideTitle3" class="carouTitle"></p>
+                    <div class="item-title__txt" id="item-title3__txt">
+                        <p id="slideTxt3" class="carouTxt">
+                        </p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="Products.html?itemId=5be9bc241c9d440000a730e7"><button type="button" id="carousel-button3" class="btn btn-primary item-title__btn">View product</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--Main content (product list)-->
+
+<main>
+    <div id="main" class="main white">
+
+    </div>
+</main>
+
+<!--Footer-->
+
+<footer>
+    <div class="footer">
+        <div class="footer__upper col-12">
+            <div class="col-12">
+                <h2 class="footer__logo"> Orinoco <i class="fas fa-camera-retro"></i></h2>
+            </div>
+    
+            <div class="footer__col col-4">
+                <p>Support</p>
+                <p>Report a problem</p>
+                <p>Payback policy</p>
+            </div>
+    
+            <div class="footer__col col-4">
+                <p>Services</p>
+                <p>Pre-sale FAQs</p>
+            </div>
+    
+            <div class="footer__col col-4">
+                <p>About us</p>
+                <p>Contact us</p>
+                <p>Affiliates</p>
+            </div>
+        </div>
+            <span class="footer__span"></span>
+        <div class="footer__lower">
+            <div class="footer__logo-list">
+                <i class="fab fa-twitter-square footer__media"></i>
+                <i class="fab fa-facebook-square footer__media"></i>
+                <i class="fab fa-google-plus-square footer__media"></i>
+                <i class="fab fa-instagram-square footer__media"></i>
+                <i class="fas fa-share-alt-square footer__media"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://kit.fontawesome.com/e06337b559.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="Javascript/data.js"></script>
+    <script type="text/javascript" src="Javascript/Objects.js"></script>
+    <script type="text/javascript" src="Javascript/Home.js"></script>
+</body>
+</html>
