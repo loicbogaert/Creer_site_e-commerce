@@ -93,9 +93,15 @@
 
      var addText = document.getElementById("pop-message");
      var orderID = document.createTextNode(" " + info.orderId);
+     var addPrice = document.createTextNode("The total price of your order is " + getTotalPrice());
      addText.appendChild(orderID);
+     addText.appendChild(document.createElement("br"));
+     addText.appendChild(document.createElement("br"));
+     addText.appendChild(addPrice);
                 
      /**Appel du pop-in bootstrap */
      $('#popin').modal();
     })
 })
+
+console.log(JSON.parse(localStorage.getItem("basket")))

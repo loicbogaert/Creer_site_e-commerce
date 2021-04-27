@@ -122,23 +122,9 @@ for (var i = 0; i < basket.length; i++) {
 }
 /**-----------------Fonction pour avoir le prix total du panier----------------------- */
 
-function getTotalPrice() {
+var docPrice = document.getElementById("totalPrice");
+docPrice.classList.add("totalPrice");
 
-    var docPrice = document.getElementById("totalPrice");
-    docPrice.classList.add("totalPrice");
+docPrice.innerHTML = getTotalPrice();
 
 
-    var totalPrice = 0;
-
-    for (var i = 0; i < basket.length; i++) {
-        var changingQuantity = document.getElementById("quantity"+[i])
-        totalPrice += parseInt(basket[i].price/100*changingQuantity.innerHTML);
-     }
-     var FinalPrice = totalPrice + " $";
-     console.log(FinalPrice)
-        docPrice.innerHTML = FinalPrice;
-
-        return FinalPrice;
-}
-
-getTotalPrice();
