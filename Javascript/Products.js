@@ -97,19 +97,17 @@ itemId.then(itemId=>{
 
                   for(var i = 0; items.length > i; i++) {
                      if (items[i].id === cameraBasket.id) {
-                       AddItem(items[i], items);
+                       addItem(items[i], items);
                      }
                   }
                }  else {
                   items.push(cameraBasket)
                   localStorage.setItem("basket", JSON.stringify(items))
-                  console.log(localStorage)
                }
             } else {
                   items = new Array;
                    items.push(cameraBasket)
                   localStorage.setItem("basket", JSON.stringify(items))
-                  console.log(localStorage)
             }
          }
    }) 

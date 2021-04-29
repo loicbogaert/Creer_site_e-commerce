@@ -43,18 +43,25 @@
         image.src = camera.image;
        
         /*Ajout de tout les éléments "product" aux sous-div du MAIN*/ 
-       
+  
+        /** mettre document.getElemùent de mainsquare + 1 dans une variable plutot que la rappeler a chaque fois
+         * retirer fonction url et la mettre dans la boucle du dessus
+         * 
+         */
+
         document.getElementById('main').appendChild(divSquare);
+
+        var squareId = document.getElementById('mainSquare' + [i]);
        
-        document.getElementById('mainSquare' + [i]).appendChild(divImg);
+        squareId.appendChild(divImg);
         divImg.appendChild(image);
-        document.getElementById('mainSquare' + [i]).appendChild(div);
+        squareId.appendChild(div);
         div.appendChild(name);
-        document.getElementById('mainSquare' + [i]).appendChild(div2);
+        squareId.appendChild(div2);
         div2.appendChild(price);
-        document.getElementById('mainSquare' + [i]).appendChild(div3);
+        squareId.appendChild(div3);
         div3.appendChild(description);
-        document.getElementById('mainSquare' + [i]).appendChild(div4);
+        squareId.appendChild(div4);
         div4.appendChild(id); 
 }
 
@@ -66,15 +73,14 @@ function urlWithId() {
 
     for (let i = 0; i < product.length; i++) {
 
-        let camera = new Camera (product[i].name, product[i].price, product[i].imageUrl, product[i].description, product[i]._id);
-
+       
         var elements =  document.getElementById('mainSquare' + [i]);
         var productPage = document.getElementById("pageProduct");
 
         /*Chaque produit amène sur la "page produit" + change les éléments de la page produits*/
 
         elements.onclick = function t() {
-            window.location.href = "Products.html?itemId=" + (camera.id);
+            window.location.href = "Products.html?itemId=" + (product[i]._id);
             productPage.innerHTML = elements.innerHTML;
         }
         }
@@ -102,4 +108,3 @@ urlWithId();
         carouTitle[i].appendChild(title);
     }
 })
-

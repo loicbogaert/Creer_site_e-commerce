@@ -6,11 +6,14 @@
 
 /*------fonction qui vérifie le type de carte utilisée pour le paiement à chaque key entrée----------- */
 
-    document.getElementById("card").addEventListener("keyup", CreditCard);
+    document.getElementById("card").onkeyup = function(){
+        creditCard(this.value)
+    };
 
-    function CreditCard() {
-      const valid1 = regexVisa.test(document.getElementById("card").value);
-      const valid2 = regexMaster.test(document.getElementById("card").value);
+    function creditCard(CardNumber) {
+
+      const valid1 = regexVisa.test(CardNumber);
+      const valid2 = regexMaster.test(CardNumber);
      
         if (valid1) { /**Vérifie si le regex Visa et validé et change les classes en fonction */
             iconChange.classList.remove("fa-credit-card");
@@ -40,7 +43,7 @@
 
     const form = document.getElementById('form');
 
-    form.addEventListener('submit' , function (e) {
+    form.onsubmit = function (e) {
         e.preventDefault();
 
         var firstname = document.getElementById("firstName").value;
@@ -93,7 +96,7 @@
 
      var addText = document.getElementById("pop-message");
      var orderID = document.createTextNode(" " + info.orderId);
-     var addPrice = document.createTextNode("The total price of your order is " + getTotalPrice());
+     var addPrice = document.createTextNode("The total price of your order is " + getTotalPrice(basket[i].price));
      addText.appendChild(orderID);
      addText.appendChild(document.createElement("br"));
      addText.appendChild(document.createElement("br"));
@@ -102,6 +105,6 @@
      /**Appel du pop-in bootstrap */
      $('#popin').modal();
     })
-})
+}
 
 console.log(JSON.parse(localStorage.getItem("basket")))
