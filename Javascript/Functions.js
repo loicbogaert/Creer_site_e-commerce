@@ -4,16 +4,20 @@
 
  /**Fonction pour incrémenter de la quantité dans le local storage */
  
-      function addItem(myData, allData) {
-         myData.quantity ++
-         localStorage.setItem("basket", JSON.stringify(allData))
+      function plusMinusItem(myData, allData, plusMinus) {
+        if (plusMinus) {
+          myData.quantity ++
+          localStorage.setItem("basket", JSON.stringify(allData))
+        }
+        else {
+          myData.quantity --
+          localStorage.setItem("basket", JSON.stringify(allData))
+        }
        }
  
  /**Fonction pour retirer de la quantité dans le local storage */
  
        function deleteItem(myData, allData) {
-         myData.quantity --
-         localStorage.setItem("basket", JSON.stringify(allData))
        }
 
 /**Fonction pour calculer le prix total du panier dans localStorage */

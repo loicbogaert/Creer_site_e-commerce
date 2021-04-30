@@ -97,7 +97,7 @@ itemId.then(itemId=>{
 
                   for(var i = 0; items.length > i; i++) {
                      if (items[i].id === cameraBasket.id) {
-                       addItem(items[i], items);
+                        plusMinusItem(items[i], items, 1);
                      }
                   }
                }  else {

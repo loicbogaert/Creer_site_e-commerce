@@ -93,33 +93,36 @@ docPrice.innerHTML = getTotalPrice();
       /** boutons d'ajout et retrait de la quantité */
 
       document.getElementById("buttonPlus"+[i]).onclick = function() {
-        addOrMinusOne(this)
+        addOrMinusButtons(this)
+        for(var i = 0; data.length > i; i++) {
+            plusMinusItem(data[i], data, 1);
+        }
     }
      document.getElementById("buttonMinus"+[i]).onclick = function() {
-        addOrMinusOne(this)
+        addOrMinusButtons(this)
+        for(var i = 0; data.length > i; i++) {
+            plusMinusItem(data[i], data, 0);
+        }
     }
 
 /**Fonction de retrait ou d'ajout selon le bouton cliqué */
 
-    function addOrMinusOne(buttonName) {
+    function addOrMinusButtons(buttonName) {
+        /**Pour le bouton + */
         if (buttonName.id.includes("buttonPlus")) {
             for(var i = 0; data.length > i; i++) {
                 if (data[i].id == buttonName.parentNode.parentNode.children[4].innerHTML) {
-                    addItem(data[i], data);
                     buttonName.parentNode.parentNode.children[5].innerHTML++
                     docPrice.innerHTML = parseInt(docPrice.innerHTML) + parseInt(buttonName.parentNode.parentNode.children[3].innerHTML)
-                    localStorage.setItem("basket", JSON.stringify(data));
-                    console.log(basket);
                 }
             }
+        /**Pour le bouton - */
         } else if (buttonName.id.includes("buttonMinus")) {
             /**Tant que la quantité dépasse 1, on retire de la quantité */
             if(buttonName.parentNode.parentNode.children[5].innerHTML > 1) {
                 for(var i = 0; data.length > i; i++) {
                     if (data[i].id == buttonName.parentNode.parentNode.children[4].innerHTML) {
-                        deleteItem(data[i], data);
                         docPrice.innerHTML = parseInt(docPrice.innerHTML) - parseInt(buttonName.parentNode.parentNode.children[3].innerHTML)
-                        localStorage.setItem("basket", JSON.stringify(data));
                         buttonName.parentNode.parentNode.children[5].innerHTML--
                     }
                 }
@@ -129,7 +132,6 @@ docPrice.innerHTML = getTotalPrice();
                     if (data[i].id == buttonName.parentNode.parentNode.children[4].innerHTML) {
                         docPrice.innerHTML = parseInt(docPrice.innerHTML) - parseInt(buttonName.parentNode.parentNode.children[3].innerHTML)
                         data.splice([i],[1]);
-                        localStorage.setItem("basket", JSON.stringify(data));
                         buttonName.parentNode.parentNode.remove();
                     }
                 }
