@@ -43,11 +43,6 @@
         image.src = camera.image;
        
         /*Ajout de tout les éléments "product" aux sous-div du MAIN*/ 
-  
-        /** mettre document.getElemùent de mainsquare + 1 dans une variable plutot que la rappeler a chaque fois
-         * retirer fonction url et la mettre dans la boucle du dessus
-         * 
-         */
 
         document.getElementById('main').appendChild(divSquare);
 
@@ -63,29 +58,21 @@
         div3.appendChild(description);
         squareId.appendChild(div4);
         div4.appendChild(id); 
-}
 
-
-
-    /**Modification des url pour chaque objet différent*/
-
-function urlWithId() {
-
-    for (let i = 0; i < product.length; i++) {
-
+        /**Modification des url pour chaque objet différent*/
        
         var elements =  document.getElementById('mainSquare' + [i]);
         var productPage = document.getElementById("pageProduct");
-
+    
         /*Chaque produit amène sur la "page produit" + change les éléments de la page produits*/
-
-        elements.onclick = function t() {
-            window.location.href = "Products.html?itemId=" + (product[i]._id);
-            productPage.innerHTML = elements.innerHTML;
-        }
+    
+        elements.onclick = function () {
+        window.location.href = "Products.html?itemId=" + (product[i]._id);
+        productPage.innerHTML = elements.innerHTML;
         }
 }
-urlWithId();
+
+
     
     
         /**Boucle pour afficher dynamiquement le carousel*/

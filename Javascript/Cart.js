@@ -19,6 +19,7 @@ for (var i = 0; i < basket.length; i++) {
     var basketImg = basket[i].image;
     var basketId = basket[i].id;
     var quantity = basket[i].quantity;
+    var basketLense = basket[i].lense;
 
     /**Création des éléments de la page */
 
@@ -29,6 +30,7 @@ for (var i = 0; i < basket.length; i++) {
     var eachProductImage = document.createElement("img");
     var eachProductId = document.createElement("p");
     var eachProductQuantity = document.createElement("p");
+    var eachProductLense = document.createElement("p");
     eachProductQuantity.id = "quantity"+[i]
     var ButtonPlus = document.createElement("button");
     var ButtonMinus = document.createElement("button");
@@ -43,6 +45,7 @@ for (var i = 0; i < basket.length; i++) {
       eachProductPrice.classList.add("cartPage__price");
       eachProductName.classList.add("cartPage__name");
       eachProductImage.classList.add("cartPage__image");
+      eachProductLense.classList.add("cartePage__lense")
 
       ButtonPlus.classList.add("incrementButton");
       ButtonPlus.id = "buttonPlus"+[i];
@@ -63,12 +66,14 @@ for (var i = 0; i < basket.length; i++) {
     eachProduct.appendChild(eachProductPrice);
     eachProduct.appendChild(eachProductId);
     eachProduct.appendChild(eachProductQuantity);
+    eachProduct.appendChild(eachProductLense);
     eachProduct.appendChild(ButtonContainer);
 
     var names = document.createTextNode(basketName);  
     var id = document.createTextNode(basketId);
     var price = document.createTextNode(basketPrice);
     var quantity = document.createTextNode(quantity);
+    var myLense = document.createTextNode(basketLense)
     var plus = document.createTextNode("+");
     var minus = document.createTextNode("-");
     ButtonPlus.appendChild(plus);
@@ -79,6 +84,7 @@ for (var i = 0; i < basket.length; i++) {
     eachProductPrice.appendChild(price);
     eachProductQuantity.appendChild(quantity);
     eachProductImage.src = basketImg;
+    eachProductLense.appendChild(myLense);
 
     /**-----------------prix total du panier----------------------- */
 
@@ -94,15 +100,9 @@ docPrice.innerHTML = getTotalPrice();
 
       document.getElementById("buttonPlus"+[i]).onclick = function() {
         addOrMinusButtons(this)
-        for(var i = 0; data.length > i; i++) {
-            plusMinusItem(data[i], data, 1);
-        }
     }
      document.getElementById("buttonMinus"+[i]).onclick = function() {
         addOrMinusButtons(this)
-        for(var i = 0; data.length > i; i++) {
-            plusMinusItem(data[i], data, 0);
-        }
     }
 
 /**Fonction de retrait ou d'ajout selon le bouton cliqué */
@@ -111,27 +111,32 @@ docPrice.innerHTML = getTotalPrice();
         /**Pour le bouton + */
         if (buttonName.id.includes("buttonPlus")) {
             for(var i = 0; data.length > i; i++) {
-                if (data[i].id == buttonName.parentNode.parentNode.children[4].innerHTML) {
-                    buttonName.parentNode.parentNode.children[5].innerHTML++
-                    docPrice.innerHTML = parseInt(docPrice.innerHTML) + parseInt(buttonName.parentNode.parentNode.children[3].innerHTML)
+                if (data[i].lense == buttonName.parentNode.parentNode.children[5].innerHTML) {
+                    plusMinusItem(data[i], data, 1);
+                    buttonName.parentNode.parentNode.children[4].innerHTML++
+                    docPrice.innerHTML = parseInt(docPrice.innerHTML) + parseInt(buttonName.parentNode.parentNode.children[2].innerHTML) + " $"
+                    localStorage.setItem("basket", JSON.stringify(data));
                 }
             }
         /**Pour le bouton - */
         } else if (buttonName.id.includes("buttonMinus")) {
             /**Tant que la quantité dépasse 1, on retire de la quantité */
-            if(buttonName.parentNode.parentNode.children[5].innerHTML > 1) {
+            if(buttonName.parentNode.parentNode.children[4].innerHTML > 1) {
                 for(var i = 0; data.length > i; i++) {
-                    if (data[i].id == buttonName.parentNode.parentNode.children[4].innerHTML) {
-                        docPrice.innerHTML = parseInt(docPrice.innerHTML) - parseInt(buttonName.parentNode.parentNode.children[3].innerHTML)
-                        buttonName.parentNode.parentNode.children[5].innerHTML--
+                    if (data[i].lense == buttonName.parentNode.parentNode.children[5].innerHTML) {
+                        plusMinusItem(data[i], data, 0);
+                        docPrice.innerHTML = parseInt(docPrice.innerHTML) - parseInt(buttonName.parentNode.parentNode.children[2].innerHTML) + " $"
+                        localStorage.setItem("basket", JSON.stringify(data));
+                        buttonName.parentNode.parentNode.children[4].innerHTML--
                     }
                 }
             } else {
                 /** Si le nombre de produit est de 0, il est supprimé du panier */
                 for(var i = 0; data.length > i; i++) {
-                    if (data[i].id == buttonName.parentNode.parentNode.children[4].innerHTML) {
-                        docPrice.innerHTML = parseInt(docPrice.innerHTML) - parseInt(buttonName.parentNode.parentNode.children[3].innerHTML)
+                    if (data[i].lense == buttonName.parentNode.parentNode.children[5].innerHTML) {
+                        docPrice.innerHTML = parseInt(docPrice.innerHTML) - parseInt(buttonName.parentNode.parentNode.children[2].innerHTML) + " $"
                         data.splice([i],[1]);
+                        localStorage.setItem("basket", JSON.stringify(data));
                         buttonName.parentNode.parentNode.remove();
                     }
                 }

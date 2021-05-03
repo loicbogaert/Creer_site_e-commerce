@@ -96,7 +96,7 @@
 
      var addText = document.getElementById("pop-message");
      var orderID = document.createTextNode(" " + info.orderId);
-     var addPrice = document.createTextNode("The total price of your order is " + getTotalPrice(basket[i].price));
+     var addPrice = document.createTextNode("The total price of your order is " + getTotalPrice());
      addText.appendChild(orderID);
      addText.appendChild(document.createElement("br"));
      addText.appendChild(document.createElement("br"));

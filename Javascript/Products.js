@@ -50,6 +50,7 @@ itemId.then(itemId=>{
       var buttonLense = document.createElement("select");
       buttonLense.setAttribute("name", "lense");
       buttonLense.classList.add("productPage__checkbox");
+      buttonLense.setAttribute("id", "lenseType");
       var choiceContainer = document.createElement("div");
       page.appendChild(choiceContainer);
 
@@ -57,21 +58,15 @@ itemId.then(itemId=>{
       for (let i = 0; i < lense.length; i++) {
          var option = document.createElement("option");
          option.setAttribute("value", lense[i]);
-         var optionTextnode = document.createTextNode(lense[i]);
+         var optionTextnode = document.createTextNode(lense[i]+(" - ("+ cameraProduct.name + ")"));
 
          option.appendChild(optionTextnode);
 
-         /** écoute du choix de lentille */
+         /** Création des choix de lentille*/
 
-         buttonLense.value = lense[i];
          choiceContainer.appendChild(buttonLense);
          buttonLense.appendChild(option);
       }
-
-      cartButton.addEventListener('click', function(){
-         var clientInput = buttonLense.value;
-         console.log(clientInput);
-      })
 
         /**Création de classes */
 
@@ -84,19 +79,20 @@ itemId.then(itemId=>{
 })
 
    itemId.then(itemId=>{
-      let cameraBasket = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1)
 
          /**Bouton pour ajouter au panier (localStorage) */
-         var cartButton = document.getElementById("cartButton");
-
          cartButton.onclick = function(){
+          lenseValue = lenseListener();
+          console.log(lenseValue)
+            let cameraBasket = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1, lenseValue)
+
             let items = JSON.parse(localStorage.getItem("basket"))
 
             if (items) { 
-               if(items.some(items => items.name === cameraBasket.name)){
+               if(items.some(items => items.lense === cameraBasket.lense)){
 
                   for(var i = 0; items.length > i; i++) {
-                     if (items[i].id === cameraBasket.id) {
+                     if (items[i].lense === cameraBasket.lense) {
                         plusMinusItem(items[i], items, 1);
                      }
                   }
@@ -111,5 +107,7 @@ itemId.then(itemId=>{
             }
          }
    }) 
+
    
    console.log(localStorage)
+

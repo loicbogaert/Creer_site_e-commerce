@@ -14,17 +14,12 @@
           localStorage.setItem("basket", JSON.stringify(allData))
         }
        }
- 
- /**Fonction pour retirer de la quantité dans le local storage */
- 
-       function deleteItem(myData, allData) {
-       }
 
 /**Fonction pour calculer le prix total du panier dans localStorage */
 var basket__json = localStorage.getItem("basket")
 var basket = JSON.parse(basket__json);
 
-       function getTotalPrice(quantity) {
+       function getTotalPrice() {
 
          var totalPrice = 0;
 
@@ -34,3 +29,11 @@ var basket = JSON.parse(basket__json);
          var FinalPrice = totalPrice + " $";
             return FinalPrice;
     }
+
+/**Fonction pour écouter le choix de la lentille dans la page produit */
+
+    function lenseListener() {
+      var lenseType = document.getElementById("lenseType");
+      var lenseValue = lenseType.options[lenseType.selectedIndex].text;
+      return lenseValue;
+   }
