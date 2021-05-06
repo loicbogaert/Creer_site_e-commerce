@@ -13,7 +13,7 @@ function $_GET(param) {
 		return vars[param] ? vars[param] : null;	
 	}
 	return vars;
-}
+};
     
     /*Array avec les données de l'API*/
 
@@ -21,12 +21,12 @@ function $_GET(param) {
         let data = await fetch("http://localhost:3000/api/cameras");
         let dataTraite = (await data.text()).toString();
         return JSON.parse(dataTraite);
-    }
+    };
 
-    const product = getData()
+    const product = getData();
 
     product.then(product=>{
-    })
+    });
 
         /**Prise des parametres URL pour "itemId" (page product)*/
     

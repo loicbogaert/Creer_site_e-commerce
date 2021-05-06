@@ -9,8 +9,8 @@
         
         /*Création des différentes div (1 div = un produit) + ajout classe / id*/
     
-        var divSquare = document.createElement("div")
-        divSquare.classList.add ('main__square')
+        var divSquare = document.createElement("div");
+        divSquare.classList.add ('main__square');
         divSquare.id = 'mainSquare' + [i];
     
         /*création des éléments + noms de classe*/

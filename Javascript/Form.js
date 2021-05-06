@@ -7,7 +7,7 @@
 /*------fonction qui vérifie le type de carte utilisée pour le paiement à chaque key entrée----------- */
 
     document.getElementById("card").onkeyup = function(){
-        creditCard(this.value)
+        creditCard(this.value);
     };
 
     function creditCard(CardNumber) {
@@ -107,4 +107,4 @@
     })
 }
 
-console.log(JSON.parse(localStorage.getItem("basket")))
+console.log(JSON.parse(localStorage.getItem("basket")));

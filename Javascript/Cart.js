@@ -9,7 +9,7 @@ var eachProductLense = document.createElement("p");
 var eachProductImage = document.createElement("img");
 
 /**Prise du local storage pour la page panier */
-var basket__json = localStorage.getItem("basket")
+var basket__json = localStorage.getItem("basket");
 var basket = JSON.parse(basket__json);
 
 for (var i = 0; i < basket.length; i++) {
@@ -31,7 +31,7 @@ for (var i = 0; i < basket.length; i++) {
     var eachProductId = document.createElement("p");
     var eachProductQuantity = document.createElement("p");
     var eachProductLense = document.createElement("p");
-    eachProductQuantity.id = "quantity"+[i]
+    eachProductQuantity.id = "quantity"+[i];
     var ButtonPlus = document.createElement("button");
     var ButtonMinus = document.createElement("button");
 
@@ -99,50 +99,35 @@ docPrice.innerHTML = getTotalPrice();
       /** boutons d'ajout et retrait de la quantité */
 
       document.getElementById("buttonPlus"+[i]).onclick = function() {
-        addOrMinusButtons(this)
-    }
+        addOrMinusButtons(this);
+    };
      document.getElementById("buttonMinus"+[i]).onclick = function() {
-        addOrMinusButtons(this)
-    }
+        addOrMinusButtons(this);
+    };
 
 /**Fonction de retrait ou d'ajout selon le bouton cliqué */
 
     function addOrMinusButtons(buttonName) {
         /**Pour le bouton + */
-        if (buttonName.id.includes("buttonPlus")) {
-            for(var i = 0; data.length > i; i++) {
-                if (data[i].lense == buttonName.parentNode.parentNode.children[5].innerHTML) {
-                    plusMinusItem(data[i], data, 1);
-                    buttonName.parentNode.parentNode.children[4].innerHTML++
-                    docPrice.innerHTML = parseInt(docPrice.innerHTML) + parseInt(buttonName.parentNode.parentNode.children[2].innerHTML) + " $"
+        if (buttonName.id.includes("buttonPlus")) {      
+                    plusMinusItem(buttonName.parentNode.parentNode.children[5].innerHTML, data, 1);
+                    buttonName.parentNode.parentNode.children[4].innerHTML++;
+                    docPrice.innerHTML = parseInt(docPrice.innerHTML) + parseInt(buttonName.parentNode.parentNode.children[2].innerHTML) + " $";
                     localStorage.setItem("basket", JSON.stringify(data));
-                }
-            }
         /**Pour le bouton - */
         } else if (buttonName.id.includes("buttonMinus")) {
             /**Tant que la quantité dépasse 1, on retire de la quantité */
-            if(buttonName.parentNode.parentNode.children[4].innerHTML > 1) {
-                for(var i = 0; data.length > i; i++) {
-                    if (data[i].lense == buttonName.parentNode.parentNode.children[5].innerHTML) {
-                        plusMinusItem(data[i], data, 0);
-                        docPrice.innerHTML = parseInt(docPrice.innerHTML) - parseInt(buttonName.parentNode.parentNode.children[2].innerHTML) + " $"
+                if(buttonName.parentNode.parentNode.children[4].innerHTML > 1) {
+                        plusMinusItem(buttonName.parentNode.parentNode.children[5].innerHTML, data, 0);
+                        docPrice.innerHTML = parseInt(docPrice.innerHTML) - parseInt(buttonName.parentNode.parentNode.children[2].innerHTML) + " $";
                         localStorage.setItem("basket", JSON.stringify(data));
-                        buttonName.parentNode.parentNode.children[4].innerHTML--
-                    }
-                }
-            } else {
-                /** Si le nombre de produit est de 0, il est supprimé du panier */
-                for(var i = 0; data.length > i; i++) {
-                    if (data[i].lense == buttonName.parentNode.parentNode.children[5].innerHTML) {
-                        docPrice.innerHTML = parseInt(docPrice.innerHTML) - parseInt(buttonName.parentNode.parentNode.children[2].innerHTML) + " $"
-                        data.splice([i],[1]);
-                        localStorage.setItem("basket", JSON.stringify(data));
-                        buttonName.parentNode.parentNode.remove();
-                    }
+                        buttonName.parentNode.parentNode.children[4].innerHTML--;
+                } else {
+                    /** Si le nombre de produit est de 0, il est supprimé du panier */
+                    deleteFromCart(buttonName.parentNode.parentNode.children[5].innerHTML, data);
+                    docPrice.innerHTML = parseInt(docPrice.innerHTML) - parseInt(buttonName.parentNode.parentNode.children[2].innerHTML) + " $";
+                    buttonName.parentNode.parentNode.remove();
                 }
             }
         }
-    }
-
-
-}
+    };

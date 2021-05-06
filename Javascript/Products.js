@@ -83,31 +83,23 @@ itemId.then(itemId=>{
          /**Bouton pour ajouter au panier (localStorage) */
          cartButton.onclick = function(){
           lenseValue = lenseListener();
-          console.log(lenseValue)
-            let cameraBasket = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1, lenseValue)
+          console.log(lenseValue);
+            let cameraBasket = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1, lenseValue);
 
-            let items = JSON.parse(localStorage.getItem("basket"))
+            let items = JSON.parse(localStorage.getItem("basket"));
 
             if (items) { 
                if(items.some(items => items.lense === cameraBasket.lense)){
-
-                  for(var i = 0; items.length > i; i++) {
-                     if (items[i].lense === cameraBasket.lense) {
-                        plusMinusItem(items[i], items, 1);
-                     }
-                  }
+                  plusMinusItem(cameraBasket.lense, items, 1);
                }  else {
-                  items.push(cameraBasket)
-                  localStorage.setItem("basket", JSON.stringify(items))
+                  items.push(cameraBasket);
+                  localStorage.setItem("basket", JSON.stringify(items));
                }
             } else {
                   items = new Array;
-                   items.push(cameraBasket)
-                  localStorage.setItem("basket", JSON.stringify(items))
+                   items.push(cameraBasket);
+                  localStorage.setItem("basket", JSON.stringify(items));
             }
          }
-   }) 
-
-   
-   console.log(localStorage)
+   });
 
