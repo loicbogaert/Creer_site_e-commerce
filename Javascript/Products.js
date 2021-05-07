@@ -83,7 +83,6 @@ itemId.then(itemId=>{
          /**Bouton pour ajouter au panier (localStorage) */
          cartButton.onclick = function(){
           lenseValue = lenseListener();
-          console.log(lenseValue);
             let cameraBasket = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1, lenseValue);
 
             let items = JSON.parse(localStorage.getItem("basket"));
