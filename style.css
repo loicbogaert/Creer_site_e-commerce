@@ -793,6 +793,7 @@ img {
   width: 100%;
   align-content: center;
   justify-content: center;
+  margin-bottom: 20px;
 }
 .creditCard__info {
   display: flex;

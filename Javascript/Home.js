@@ -62,13 +62,12 @@
         /**Modification des url pour chaque objet différent*/
        
         var elements =  document.getElementById('mainSquare' + [i]);
-        var productPage = document.getElementById("pageProduct");
+
     
         /*Chaque produit amène sur la "page produit" + change les éléments de la page produits*/
     
         elements.onclick = function () {
         window.location.href = "Products.html?itemId=" + (product[i]._id);
-        productPage.innerHTML = elements.innerHTML;
         }
 }
 
