@@ -190,16 +190,28 @@
 #carousel-button3 {
     top: 45%;
     left: 5%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #carousel-button1 {
     top: 45%;
     right: 5%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #carousel-button2 {
     top: 45%;
     left: 5%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -287,9 +299,6 @@
                                         -webkit-box-shadow: 4px 1px 23px 2px $blue;
                                         -moz-box-shadow: 4px 1px 23px 2px $blue;
                                         box-shadow: 4px 1px 23px 2px $blue;
-                                            &__title {
-                                                text-decoration: underline;
-                                            }
                                     }
                         }         
 }
