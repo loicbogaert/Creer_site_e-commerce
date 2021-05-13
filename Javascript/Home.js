@@ -42,36 +42,33 @@
         var image = document.createElement("img");
         image.src = camera.image;
        
+        
         /*Ajout de tout les éléments "product" aux sous-div du MAIN*/ 
 
         document.getElementById('main').appendChild(divSquare);
 
         var squareId = document.getElementById('mainSquare' + [i]);
+
+                /*Chaque produit amène sur la "page produit" + change les éléments de la page produits*/
+    
+                var link = document.createElement("a");
+                link.setAttribute("href", "Products.html?itemId=" + (product[i]._id));
+                squareId.appendChild(link);
+                link.classList.add("productLink");
        
-        squareId.appendChild(divImg);
+        link.appendChild(divImg);
         divImg.appendChild(image);
-        squareId.appendChild(div);
+        link.appendChild(div);
         div.appendChild(name);
-        squareId.appendChild(div2);
+        link.appendChild(div2);
         div2.appendChild(price);
-        squareId.appendChild(div3);
+        link.appendChild(div3);
         div3.appendChild(description);
-        squareId.appendChild(div4);
+        link.appendChild(div4);
         div4.appendChild(id); 
-
-        /**Modification des url pour chaque objet différent*/
-       
-        var elements =  document.getElementById('mainSquare' + [i]);
-
     
-        /*Chaque produit amène sur la "page produit" + change les éléments de la page produits*/
-    
-        elements.onclick = function () {
-        window.location.href = "Products.html?itemId=" + (product[i]._id);
-        }
-}
 
-
+    }
     
     
         /**Boucle pour afficher dynamiquement le carousel*/

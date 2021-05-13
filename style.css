@@ -395,6 +395,16 @@ img {
   object-fit: cover;
 }
 
+.productLink {
+  display: block;
+  text-decoration: none;
+  color: white !important;
+}
+
+.productLink:hover {
+  text-decoration: none;
+}
+
 /*Partie footer*/
 .footer {
   background-color: black;

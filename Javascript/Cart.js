@@ -110,18 +110,18 @@ docPrice.innerHTML = getTotalPrice();
     function addOrMinusButtons(buttonName) {
         /**Pour le bouton + */
         if (buttonName.id.includes("buttonPlus")) {      
-                    plusMinusItem(buttonName.parentNode.parentNode.children[5].innerHTML, data, 1);
-                    buttonName.parentNode.parentNode.children[4].innerHTML++;
-                    docPrice.innerHTML = parseInt(docPrice.innerHTML) + parseInt(buttonName.parentNode.parentNode.children[2].innerHTML) + " $";
-                    localStorage.setItem("basket", JSON.stringify(data));
+            plusMinusItem(buttonName.parentNode.parentNode.children[5].innerHTML, data, 1);
+            buttonName.parentNode.parentNode.children[4].innerHTML++;
+            docPrice.innerHTML = parseInt(docPrice.innerHTML) + parseInt(buttonName.parentNode.parentNode.children[2].innerHTML) + " $";
+            localStorage.setItem("basket", JSON.stringify(data));
         /**Pour le bouton - */
         } else if (buttonName.id.includes("buttonMinus")) {
             /**Tant que la quantité dépasse 1, on retire de la quantité */
                 if(buttonName.parentNode.parentNode.children[4].innerHTML > 1) {
-                        plusMinusItem(buttonName.parentNode.parentNode.children[5].innerHTML, data, 0);
-                        docPrice.innerHTML = parseInt(docPrice.innerHTML) - parseInt(buttonName.parentNode.parentNode.children[2].innerHTML) + " $";
-                        localStorage.setItem("basket", JSON.stringify(data));
-                        buttonName.parentNode.parentNode.children[4].innerHTML--;
+                    plusMinusItem(buttonName.parentNode.parentNode.children[5].innerHTML, data, 0);
+                    docPrice.innerHTML = parseInt(docPrice.innerHTML) - parseInt(buttonName.parentNode.parentNode.children[2].innerHTML) + " $";
+                    localStorage.setItem("basket", JSON.stringify(data));
+                    buttonName.parentNode.parentNode.children[4].innerHTML--;
                 } else {
                     /** Si le nombre de produit est de 0, il est supprimé du panier */
                     deleteFromCart(buttonName.parentNode.parentNode.children[5].innerHTML, data);

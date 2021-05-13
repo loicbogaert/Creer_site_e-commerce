@@ -72,6 +72,7 @@
 
         for (var i = 0; i < basket.length; i++) {
             products.push(basket[i].id);
+            console.log(basket[i].id);
         }
 
 
