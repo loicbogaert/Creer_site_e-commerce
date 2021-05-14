@@ -55,3 +55,21 @@ var basket = JSON.parse(basket__json);
       var lenseValue = lenseType.options[lenseType.selectedIndex].text;
       return lenseValue;
    }
+
+
+   /**Fonction count pour compter le nombre d'objet dans le panier */
+
+   var countHtml = document.getElementById("count");
+
+function count(){
+  let panier = JSON.parse(localStorage.getItem("basket"));
+  var total = 0;
+  for(let i = 0; i < panier.length; i++) {
+  total += panier[i].quantity
+  }
+  localStorage.setItem("count", JSON.stringify(total));
+  countHtml.innerHTML = JSON.parse(localStorage.getItem("count"))
+  return total;
+}
+
+count();

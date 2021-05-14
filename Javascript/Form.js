@@ -72,9 +72,7 @@
 
         for (var i = 0; i < basket.length; i++) {
             products.push(basket[i].id);
-            console.log(basket[i].id);
         }
-
 
         /**
          * --------------requête POST---------------
@@ -103,9 +101,13 @@
      addText.appendChild(document.createElement("br"));
      addText.appendChild(addPrice);
                 
+
      /**Appel du pop-in bootstrap */
      $('#popin').modal();
+
+     var dismissButton = document.getElementById("dismissButton");
+     dismissButton.onclick = function(){
+        localStorage.clear()
+     }
     })
 }
-
-console.log(JSON.parse(localStorage.getItem("basket")));

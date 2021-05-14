@@ -37,7 +37,6 @@ function $_GET(param) {
     async function getById() {
         let byId = await fetch("http://localhost:3000/api/cameras/" + (theId));
         let byIdTraite = (await byId.text()).toString();
-        console.log(theId);
         return JSON.parse(byIdTraite);
     }
     const itemId = getById();

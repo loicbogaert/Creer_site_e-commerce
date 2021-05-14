@@ -84,20 +84,21 @@ itemId.then(itemId=>{
          cartButton.onclick = function(){
           lenseValue = lenseListener();
             let cameraBasket = new Camera (itemId.name, itemId.price, itemId.imageUrl, itemId.description, itemId._id, 1, lenseValue);
-
             let items = JSON.parse(localStorage.getItem("basket"));
-
             if (items) { 
                if(items.some(items => items.lense === cameraBasket.lense)){
                   plusMinusItem(cameraBasket.lense, items, 1);
+                  count()
                }  else {
                   items.push(cameraBasket);
                   localStorage.setItem("basket", JSON.stringify(items));
+                  count()
                }
             } else {
                   items = new Array;
                    items.push(cameraBasket);
                   localStorage.setItem("basket", JSON.stringify(items));
+                  count();
             }
          }
    });

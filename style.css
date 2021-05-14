@@ -109,6 +109,11 @@
   align-items: center;
   justify-content: center;
 }
+.navbar1__links:hover {
+  color: #27a5bb;
+  transform: translate(8px, -5px) scale(1.2);
+  transition-duration: 0.5s;
+}
 .navbar1__txt {
   margin-right: 12px;
   color: black !important;
@@ -123,11 +128,16 @@
   height: 30px;
   width: 150px;
 }
-.navbar1__txt a:hover {
-  color: #27a5bb;
-  text-shadow: 1.5px 1.5px 0px black;
-  transform: translate(8px, -5px) scale(1.2);
-  transition-duration: 0.5s;
+.navbar1__count {
+  background-color: #27a5bb;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  margin-left: -35px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
 }
 
 #account {
