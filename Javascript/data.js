@@ -20,7 +20,10 @@ function $_GET(param) {
       async function getData() {
         let data = await fetch("http://localhost:3000/api/cameras");
         let dataTraite = (await data.text()).toString();
-        return JSON.parse(dataTraite);
+        datatype = typeof(dataTraite);
+            if (datatype = Object) {
+                return JSON.parse(dataTraite);
+        }
     };
 
     const product = getData();
@@ -37,7 +40,10 @@ function $_GET(param) {
     async function getById() {
         let byId = await fetch("http://localhost:3000/api/cameras/" + (theId));
         let byIdTraite = (await byId.text()).toString();
-        return JSON.parse(byIdTraite);
+        datatype = typeof(byIdTraite);
+            if (datatype = Object) {
+                return JSON.parse(byIdTraite);
+        }
     }
     const itemId = getById();
         

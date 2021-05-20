@@ -4,7 +4,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./style.css",
     "start": "node ./backend/server.js"
   },
   "author": "",
