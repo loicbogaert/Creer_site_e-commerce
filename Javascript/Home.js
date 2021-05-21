@@ -52,7 +52,7 @@
                 /*Chaque produit amène sur la "page produit" + change les éléments de la page produits*/
     
                 var link = document.createElement("a");
-                link.setAttribute("href", "Products.html?itemId=" + (product[i]._id));
+                link.setAttribute("href", "Products.html?itemid=" + (product[i]._id));
                 squareId.appendChild(link);
                 link.classList.add("productLink");
        

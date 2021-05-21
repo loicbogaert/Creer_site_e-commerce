@@ -33,14 +33,14 @@ function $_GET(param) {
 
         /**Prise des parametres URL pour "itemId" (page product)*/
     
-        var theId = ($_GET("itemId"));
+        var theId = ($_GET("itemid"));
 
     /**Données de l'API pour la page product (Selon l'ID de l'objets)*/
 
     async function getById() {
         let byId = await fetch("http://localhost:3000/api/cameras/" + (theId));
         let byIdTraite = (await byId.text()).toString();
-        datatype = typeof(byIdTraite);
+        datatype = typeof(byIdTraite);  
             if (datatype = Object) {
                 return JSON.parse(byIdTraite);
         }

@@ -43,9 +43,11 @@ for (var i = 0; i < basket.length; i++) {
 
       eachProduct.classList.add("cartPage");
       eachProductPrice.classList.add("cartPage__price");
+      eachProductPrice.id = "priceId"+[i];
       eachProductName.classList.add("cartPage__name");
       eachProductImage.classList.add("cartPage__image");
       eachProductLense.classList.add("cartePage__lense")
+      eachProductLense.id = "lenseId"+[i];
 
       ButtonPlus.classList.add("incrementButton");
       ButtonPlus.id = "buttonPlus"+[i];
@@ -106,6 +108,9 @@ docPrice.innerHTML = getTotalPrice();
     };
 
 /**Fonction de retrait ou d'ajout selon le bouton cliqué */
+    var lenseId = document.getElementById("lenseId"+[i]);
+    var priceId = document.getElementById("priceId"+[i]);
+    var quantityId = document.getElementById("quantity"+[i])
 
     function addOrMinusButtons(buttonName) {
         /**Pour le bouton + */
@@ -130,7 +135,19 @@ docPrice.innerHTML = getTotalPrice();
                     docPrice.innerHTML = parseInt(docPrice.innerHTML) - parseInt(buttonName.parentNode.parentNode.children[2].innerHTML) + " $";
                     buttonName.parentNode.parentNode.remove();
                     count();
+                    if (basket.length == 1) {
+                        document.getElementById("linkButtonValidation").href = "#";
+                        var empty = document.getElementById("priceLabel");
+                        empty.innerHTML = "Your basket is empty !";
+                    }
                 }
             }
         }
     };
+
+    
+    if (basket.length == 0) {
+        document.getElementById("linkButtonValidation").href = "#";
+        var empty = document.getElementById("priceLabel");
+        empty.innerHTML = "Your basket is empty !";
+    }

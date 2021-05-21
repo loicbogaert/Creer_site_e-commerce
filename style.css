@@ -613,6 +613,10 @@ img {
   width: 100%;
 }
 
+#count {
+  min-width: 25px;
+}
+
 /*variables*/
 /**/
 .bold {
