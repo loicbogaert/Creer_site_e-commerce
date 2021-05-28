@@ -56,6 +56,7 @@
                 squareId.appendChild(link);
                 link.classList.add("productLink");
        
+                
         link.appendChild(divImg);
         divImg.appendChild(image);
         link.appendChild(div);

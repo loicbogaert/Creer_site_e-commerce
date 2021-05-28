@@ -137,17 +137,12 @@ docPrice.innerHTML = getTotalPrice();
                     count();
                     if (basket.length == 1) {
                         document.getElementById("linkButtonValidation").href = "#";
-                        var empty = document.getElementById("priceLabel");
-                        empty.innerHTML = "Your basket is empty !";
                     }
                 }
             }
         }
     };
 
-    
     if (basket.length == 0) {
         document.getElementById("linkButtonValidation").href = "#";
-        var empty = document.getElementById("priceLabel");
-        empty.innerHTML = "Your basket is empty !";
-    }
+    };

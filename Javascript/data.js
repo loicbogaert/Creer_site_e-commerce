@@ -28,9 +28,6 @@ function $_GET(param) {
 
     const product = getData();
 
-    product.then(product=>{
-    });
-
         /**Prise des parametres URL pour "itemId" (page product)*/
     
         var theId = ($_GET("itemid"));
