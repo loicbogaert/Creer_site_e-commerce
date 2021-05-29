@@ -71,15 +71,6 @@
 }
 
 /*animations*/
-/*anim de bouton (carousel)*/
-@keyframes illum {
-  from {
-    text-shadow: none;
-  }
-  to {
-    text-shadow: 0px 0px 50px #00ffcc, 0px 0px 10px #00ffcc, 0px 0px 20px #00ffcc, 0px 0px 30px #00ffcc, 0px 0px 40px #00ffcc, 0px 0px 80px #00ffcc, 0px 0px 120px #00ffcc, 0px 0px 180px #00ffcc, 0 0 100px #00ffcc, 0 0 150px #00ffcc, 0 0 200px #00ffcc, 0 0 200px grey, 0 0 150px grey;
-  }
-}
 /*animation du bouton ajouter au panier*/
 @keyframes buttonTranslate {
   0% {
@@ -93,6 +84,14 @@
   100% {
     color: black;
     border-color: black;
+  }
+}
+@keyframes text-border {
+  0% {
+    text-shadow: 2px 1px black;
+  }
+  100% {
+    text-shadow: 2px 1px white;
   }
 }
 /*header*/
@@ -294,6 +293,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-shadow: 2px 1px black;
+}
+#carousel-button3:hover {
+  animation: 1s linear 0s text-border;
+  animation-fill-mode: forwards;
 }
 
 #carousel-button1 {
@@ -303,6 +307,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-shadow: 2px 1px black;
+}
+#carousel-button1:hover {
+  animation: 1s linear 0s text-border;
+  animation-fill-mode: forwards;
 }
 
 #carousel-button2 {
@@ -312,6 +321,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-shadow: 2px 1px black;
+}
+#carousel-button2:hover {
+  animation: 1s linear 0s text-border;
+  animation-fill-mode: forwards;
 }
 
 /*boutons carousel*/
@@ -319,22 +333,6 @@
   background-color: transparent;
   border: solid 3px white;
   font-weight: bolder;
-  animation-name: illum;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: backwards;
-  -o-animation-name: illum;
-  -o-animation-duration: 2s;
-  -o-animation-iteration-count: infinite;
-  -o-animation-fill-mode: backwards;
-  -webkit-animation-name: illum;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-fill-mode: backwards;
-  -moz-animation-name: illum;
-  -moz-animation-duration: 2s;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-fill-mode: backwards;
 }
 .item-title__btn:hover {
   -moz-animation: 0;
@@ -345,7 +343,6 @@
   background-color: #00ffcc;
   color: black;
   box-shadow: 0 0 5px #00ffcc, 0 0 25px #00ffcc, 0 0 50px #00ffcc, 0 0 200px #00ffcc, 0 0 200px grey, 0 0 150px grey;
-  text-shadow: -1px 3px 10px black;
   text-decoration: none;
   border: #00ffcc;
 }
@@ -536,15 +533,6 @@ img {
 }
 
 /*animations*/
-/*anim de bouton (carousel)*/
-@keyframes illum {
-  from {
-    text-shadow: none;
-  }
-  to {
-    text-shadow: 0px 0px 50px #00ffcc, 0px 0px 10px #00ffcc, 0px 0px 20px #00ffcc, 0px 0px 30px #00ffcc, 0px 0px 40px #00ffcc, 0px 0px 80px #00ffcc, 0px 0px 120px #00ffcc, 0px 0px 180px #00ffcc, 0 0 100px #00ffcc, 0 0 150px #00ffcc, 0 0 200px #00ffcc, 0 0 200px grey, 0 0 150px grey;
-  }
-}
 /*animation du bouton ajouter au panier*/
 @keyframes buttonTranslate {
   0% {
@@ -558,6 +546,14 @@ img {
   100% {
     color: black;
     border-color: black;
+  }
+}
+@keyframes text-border {
+  0% {
+    text-shadow: 2px 1px black;
+  }
+  100% {
+    text-shadow: 2px 1px white;
   }
 }
 /*format scale*/
@@ -690,15 +686,6 @@ img {
 }
 
 /*animations*/
-/*anim de bouton (carousel)*/
-@keyframes illum {
-  from {
-    text-shadow: none;
-  }
-  to {
-    text-shadow: 0px 0px 50px #00ffcc, 0px 0px 10px #00ffcc, 0px 0px 20px #00ffcc, 0px 0px 30px #00ffcc, 0px 0px 40px #00ffcc, 0px 0px 80px #00ffcc, 0px 0px 120px #00ffcc, 0px 0px 180px #00ffcc, 0 0 100px #00ffcc, 0 0 150px #00ffcc, 0 0 200px #00ffcc, 0 0 200px grey, 0 0 150px grey;
-  }
-}
 /*animation du bouton ajouter au panier*/
 @keyframes buttonTranslate {
   0% {
@@ -712,6 +699,14 @@ img {
   100% {
     color: black;
     border-color: black;
+  }
+}
+@keyframes text-border {
+  0% {
+    text-shadow: 2px 1px black;
+  }
+  100% {
+    text-shadow: 2px 1px white;
   }
 }
 .productPage {

@@ -84,30 +84,6 @@ $blue : rgb(39, 165, 187);
 
 /*animations*/
 
-/*anim de bouton (carousel)*/
-@keyframes illum {
-
-    from {
-        text-shadow: none;
-    }
-
-    to {
-        text-shadow: 0px 0px 50px #00ffcc,
-        0px 0px 10px #00ffcc,
-        0px 0px 20px #00ffcc,
-        0px 0px 30px #00ffcc,
-        0px 0px 40px #00ffcc,
-        0px 0px 80px #00ffcc,
-        0px 0px 120px #00ffcc,
-        0px 0px 180px #00ffcc,
-        0 0 100px #00ffcc,
-        0 0 150px #00ffcc,
-        0 0 200px #00ffcc,
-        0 0 200px grey,
-        0 0 150px grey,
-    }
-}
-
         /*animation du bouton ajouter au panier*/
 
         @keyframes buttonTranslate{
@@ -127,5 +103,15 @@ $blue : rgb(39, 165, 187);
             100% {
                 color: black;
                 border-color: black;
+            }
+        }
+
+        @keyframes text-border {
+            0% {
+                text-shadow: 2px 1px black;
+            }
+
+            100% {
+                text-shadow: 2px 1px white;
             }
         }
