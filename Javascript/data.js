@@ -18,7 +18,7 @@ function $_GET(param) {
     /*Array avec les données de l'API*/
 
       async function getData() {
-        let data = await fetch("http://localhost:3000/api/cameras");
+        let data = await fetch("https://hidden-river-50430.herokuapp.com/api/cameras");
         let dataTraite = (await data.text()).toString();
         datatype = typeof(dataTraite);
             if (datatype = Object) {
@@ -35,7 +35,7 @@ function $_GET(param) {
     /**Données de l'API pour la page product (Selon l'ID de l'objets)*/
 
     async function getById() {
-        let byId = await fetch("http://localhost:3000/api/cameras/" + (theId));
+        let byId = await fetch("https://hidden-river-50430.herokuapp.com/api/cameras/" + (theId));
         let byIdTraite = (await byId.text()).toString();
         datatype = typeof(byIdTraite);  
             if (datatype = Object) {

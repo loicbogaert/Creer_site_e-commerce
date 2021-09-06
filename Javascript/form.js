@@ -78,7 +78,7 @@
          * --------------requête POST---------------
          */
 
-        fetch("http://localhost:3000/api/cameras/order", {
+        fetch("https://hidden-river-50430.herokuapp.com/api/cameras/order", {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
